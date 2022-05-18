@@ -6,9 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>myCGPA</title>
-    <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.css">
-    <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="assets\css\style.css">
 </head>
 
 <body>
@@ -17,10 +15,10 @@
     <header class="">
 
         <!-- ============  NAVBAR  ================ -->
-        <nav class="navbar navbar-expand-lg py-3 navbar-light border fixed-top">
+        <nav class="navbar navbar-expand-lg py-3 navbar-light menu shadow fixed-top">
             <div class="container">
                 <a href="#">
-                    <div class="navbar-brand text-primary">
+                    <div class="navbar-brand logo">
                         myCGPA
                     </div>
                 </a>
@@ -55,19 +53,24 @@
         <!-- ============  NAVBAR ENDS  ================ -->
 
         <!-- BANNER SECTION -->
-        <section class="mt-5 p-5 text-center text-sm-start">
+        <section class="mt-5 p-5 text-center text-sm-start banner">
             <div class="container">
                 <div class="d-sm-flex">
                     <div class="align-items-center justify-content-between">
-                        <h1>Calculate your <span class="text-warning">cGPA</span> and know your fate today!</h1>
-                        <p class="lead my-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex eius deleniti
+                        <h1 class="headerText">
+                            Calculate your <span class="text-warning">cGPA</span> and know your fate
+                            today!
+                        </h1>
+
+                        <p class="desc my-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex eius deleniti
                             vero quis reiciendis laudantium praesentium dignissimos? Non quidem perferendis omnis ad
                             deserunt vel ab fugit nulla commodi, natus culpa veritatis saepe est officiis? Laboriosam
                             velit inventore tempora dolorum eius necessitatibus possimus neque quidem maiores, dolorem
                             nam tenetur obcaecati ipsum?</p>
 
-                        <button class="btn btn-primary btn-lg" data-bs-toggle="modal"
-                            data-bs-target="#calculator">Calculate my GPA!</button>
+                        <a href="#calculator">
+                            <button class="btn btn-primary btn-lg">Calculate my GPA!</button>
+                        </a>
                     </div>
                     <img class="img-fluid w-50 d-none d-sm-block" src="assets\images\banner.png" alt="">
                 </div>
