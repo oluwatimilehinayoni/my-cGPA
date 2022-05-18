@@ -1,0 +1,20 @@
+@use '../custom' as *;
+
+button{
+    color: $white !important ;
+}
+
+.banner{
+    button{
+        color: $primary !important;
+        font-weight: 500;
+        background-color: $white;
+        border: 1px solid $primary;
+    }
+
+    button:hover{
+            color: $white !important;
+            background-color: $primary;
+            border: $white;  
+    }
+}

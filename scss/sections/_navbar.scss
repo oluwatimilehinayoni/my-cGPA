@@ -1,0 +1,30 @@
+@use '../custom' as *;
+@use '../components/mixins' as *;
+
+.menu{
+    @include gradient;
+
+    .logo{
+      color: $white;
+      font-family: 'Georgia', 'Times New Roman', Times, serif;
+      font-size: 26px;
+      font-weight: 700;
+
+      :hover{
+        color: $white;
+      }
+    }
+    
+    li{
+
+      a{
+        color: $white !important;
+        font-weight: 400;
+        padding: 0 0.7rem;
+      }
+
+      :hover{
+        border-bottom: 2px solid $primary;
+      }
+    }
+}

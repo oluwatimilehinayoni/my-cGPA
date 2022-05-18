@@ -1,0 +1,30 @@
+@use '../custom' as *;
+
+$bgColor: #ffffff;
+$font-color: rgb(61, 59, 59);
+
+/* DEFAULT STYLES */
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-color: $bgColor;
+  font-size: 20px;
+  color: $font-color;
+}
+
+a{
+  text-decoration: none;
+  color: $primary;
+}
+
+p {
+  line-height: 1.5;
+}
+
+
+h1,h2,h3{
+  color: $primary;
+}
