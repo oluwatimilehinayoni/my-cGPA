@@ -1,5 +1,6 @@
 {
   "name": "mycgpa",
+  "Author": "['Prince Will' => 'Oluwatimilehin Ayoni']",
   "version": "1.0.0",
   "description": "Calculate your CGPA with ease",
   "main": "index.js",
@@ -14,7 +15,7 @@
     "Calculator"
   ],
   "author": "Prince Will",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "bootstrap": "^5.1.0",
     "sass": "^1.49.9"

@@ -23,16 +23,31 @@ form{
       }
     }
   
-    input[type='text']{
+    input[type='text'],
+    input[type='number']{
       padding: 3%;
       width: 100%;
-      border: none;
       outline: none;
+      border: none;
     }
     select, option{
       width: 100%;
       outline: none;
       padding: 3%;
+      border: none;
     }
   }
   
+  @include media-breakpoint-down(sm) {
+    form{
+        .row{
+          margin-bottom: 2rem;
+        }
+        div{
+          margin-bottom: 1rem;
+        }
+        button{
+          margin-bottom: 1rem;
+        }
+    }
+}

@@ -11329,9 +11329,11 @@ h1, h2, h3 {
   color: #fff;
 }
 .menu li a {
+  font-size: medium;
   color: #fff !important;
   font-weight: 400;
   padding: 0 0.7rem;
+  margin-right: 1.8rem;
 }
 .menu li :hover {
   border-bottom: 2px solid rgb(209, 79, 5);
@@ -11373,18 +11375,31 @@ form #cgpaResult p {
 form #cgpaResult span {
   position: absolute;
 }
-form input[type=text] {
+form input[type=text],
+form input[type=number] {
   padding: 3%;
   width: 100%;
-  border: none;
   outline: none;
+  border: none;
 }
 form select, form option {
   width: 100%;
   outline: none;
   padding: 3%;
+  border: none;
 }
 
+@media (max-width: 575.98px) {
+  form .row {
+    margin-bottom: 2rem;
+  }
+  form div {
+    margin-bottom: 1rem;
+  }
+  form button {
+    margin-bottom: 1rem;
+  }
+}
 footer {
   background-color: rgb(191, 138, 210);
   text-align: center;
