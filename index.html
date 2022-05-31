@@ -49,7 +49,6 @@
                 </div>
 
             </div>
-
         </nav>
         <!-- ============  NAVBAR ENDS  ================ -->
 
@@ -85,7 +84,7 @@
         <div class="row">
             <div class="col-sm-8">
                 <div class="mb-5 border p-5" id="calculator">
-                    <form action="" method="post" class="form">
+                    <form action="/index.html" method="post" class="form">
                         <div class="row mb-4">
                             <div class="col-sm-9 display-6 me-5">
                                 Semester 1
@@ -206,33 +205,51 @@
                             </div>
                         </div>
 
-                        <div class="mt-4 mb-4">
-                            Semester 1 GPA:
-                            <span id="">
-                                <strong>0.00</strong>
-                            </span>
+                        <!--  ==========Another Course  =========== -->
+                        <div class="row">
+                            <div class="col-sm-5 border">
+                                <div id="addCourseCode"></div>
+                            </div>
 
-                            <button class=" ms-5 btn btn-outline-primary text-dark">
-                                Add Course
+                            <div class="col-sm-4 border">
+
+                            </div>
+
+                            <div class="col-sm-3 border">
+                                <div id="addCourseUnit"></div>
+                            </div>
+                        </div>
+                    </form>
+
+
+                    <div class="mt-4 mb-4">
+                        Semester 1 GPA:
+                        <span id="">
+                            <strong>0.00</strong>
+                        </span>
+
+                        <button id="addCourse" class="ms-5 btn btn-outline-primary text-dark">
+                            Add Course
+                        </button>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="col me-5">
+                            <button class="btn btn-lg btn-primary" onclick="addSmester()">
+                                Add Semester
                             </button>
                         </div>
 
-                        <div class="row">
-                            <div class="col me-5">
-                                <button class="btn btn-lg btn-primary">
-                                    Add Semester
-                                </button>
+                        <div class="col ms-5">
+                            <div id="cgpaResult">
+                                <p class="text-center">0.00</p>
+                                <span>Cummulative GPA</span>
                             </div>
-
-                            <div class="col ms-5">
-                                <div id="cgpaResult">
-                                    <p class="text-center">0.00</p>
-                                    <span>Cummulative GPA</span>
-                                </div>
-                            </div>
-
                         </div>
-                    </form>
+
+                    </div>
                 </div>
             </div>
 
@@ -253,17 +270,21 @@
 
 
             <div>
-                <section id="HowToUse" class="mb-4">
+                <section id="HowToUse" class="mb-4 HowToUse">
                     <h1>How to Use</h1>
-                    <small>To use the mycGPA calculator, follow the steps below:</small>
+                    <small>To use mycGPA calculator, follow the steps below:</small>
                     <ul>
                         <li>Fill in the fields with your course code, course unit and grade</li>
-                        <li>Click the 'Add Course' button <button disabled="disabled" class="btn btn-primary">Add
-                                Course</button> to add more
-                            courses </li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
+                        <li>
+                            Click the 'Add Course' button <button disabled="disabled" class="btn btn-primary">
+                                Add Course</button> to add more courses
+                        </li>
+                        <li>Click the 'Add Semester' button to add new fields for other semesters</li>
+                        <li>After you fill the fields for the semesters, the cGPA is displayed automatically at the
+                            bottom right.
+                        </li>
+                        <li>You have successfully calculated your cGPA. </li>
+                        <strong>Keep Shining!</strong>
                     </ul>
                 </section>
 
@@ -415,6 +436,18 @@
         </div>
     </div>
 
+    <script type="text/javascript">
+        document.getElementById("addCourse").onclick = function () {
+
+            for (var x = 1; x < 2; x++) {
+
+                document.getElementById("addCourseCode").innerHTML = '<input type="text" placeholder="Course Code" name="Course Code" class="form-group">';
+
+                document.getElementById("addCourseUnit").innerHTML = '<input type="text" placeholder="Course Unit" name="Course Unit" class="form-group">';
+
+            }
+        }
+    </script>
 
     <script src="node_modules\bootstrap\dist\js\bootstrap.js"></script>
 </body>
