@@ -101,7 +101,7 @@
                             </div>
 
                             <div class="col-sm-4 border">
-                                <select name="grade" id="grade" class="">
+                                <select name="grade_1" id="grade" class="">
                                     <option value="" selected>Grade</option>
                                     <option value="A">A</option>
                                     <option value="B">B</option>
@@ -113,7 +113,7 @@
                             </div>
 
                             <div class="col-sm-3 border">
-                                <input type="number" placeholder="Course Unit" class="">
+                                <input type="number" name="course_unit_1" placeholder="Course Unit" class="">
                             </div>
                         </div>
                         <!--  ============ 2  ============  -->
@@ -123,7 +123,7 @@
                             </div>
 
                             <div class="col-sm-4 border">
-                                <select name="grade" id="grade" class="">
+                                <select name="grade_2" id="grade" class="">
                                     <option value="" selected>Grade</option>
                                     <option value="A">A</option>
                                     <option value="B">B</option>
@@ -135,7 +135,7 @@
                             </div>
 
                             <div class="col-sm-3 border">
-                                <input type="number" placeholder="Course Unit" class="">
+                                <input type="number" name="course_unit_2" placeholder="Course Unit" class="">
                             </div>
                         </div>
                         <!--  ============ 3  ============  -->
@@ -145,7 +145,7 @@
                             </div>
 
                             <div class="col-sm-4 border">
-                                <select name="grade" id="grade" class="">
+                                <select name="grade_3" id="grade" class="">
                                     <option value="" selected>Grade</option>
                                     <option value="A">A</option>
                                     <option value="B">B</option>
@@ -157,7 +157,7 @@
                             </div>
 
                             <div class="col-sm-3 border">
-                                <input type="number" placeholder="Course Unit" class="">
+                                <input type="number" name="course_unit_3" placeholder="Course Unit" class="">
                             </div>
                         </div>
                         <!--  ============ 4  ============  -->
@@ -167,7 +167,7 @@
                             </div>
 
                             <div class="col-sm-4 border">
-                                <select name="grade" id="grade" class="">
+                                <select name="grade_4" id="grade" class="">
                                     <option value="" selected>Grade</option>
                                     <option value="A">A</option>
                                     <option value="B">B</option>
@@ -179,7 +179,7 @@
                             </div>
 
                             <div class="col-sm-3 border">
-                                <input type="number" placeholder="Course Unit" class="">
+                                <input type="number" name="course_unit_4" placeholder="Course Unit" class="">
                             </div>
                         </div>
                         <!--  ============ 5  ============  -->
@@ -189,7 +189,7 @@
                             </div>
 
                             <div class="col-sm-4 border">
-                                <select name="grade" id="grade" class="">
+                                <select name="grade_5" id="grade" class="">
                                     <option value="" selected>Grade</option>
                                     <option value="A">A</option>
                                     <option value="B">B</option>
@@ -201,24 +201,13 @@
                             </div>
 
                             <div class="col-sm-3 border">
-                                <input type="number" placeholder="Course Unit" class="">
+                                <input type="number" name="course_unit_5" placeholder="Course Unit" class="">
                             </div>
                         </div>
 
                         <!--  ==========Another Course  =========== -->
-                        <div class="row">
-                            <div class="col-sm-5 border">
-                                <div id="addCourseCode"></div>
-                            </div>
-
-                            <div class="col-sm-4 border">
-
-                            </div>
-
-                            <div class="col-sm-3 border">
-                                <div id="addCourseUnit"></div>
-                            </div>
-                        </div>
+                        <div id="addCourseDiv"></div>
+                        <!--  ==========Another Course Ends  =========== -->
                     </form>
 
 
@@ -228,7 +217,7 @@
                             <strong>0.00</strong>
                         </span>
 
-                        <button id="addCourse" class="ms-5 btn btn-outline-primary text-dark">
+                        <button class="ms-5 btn btn-outline-primary text-dark" onclick="addCourse()">
                             Add Course
                         </button>
                     </div>
@@ -237,7 +226,7 @@
 
                     <div class="row">
                         <div class="col me-5">
-                            <button class="btn btn-lg btn-primary" onclick="addSmester()">
+                            <button class="btn btn-lg btn-primary" onclick="addSemester()">
                                 Add Semester
                             </button>
                         </div>
@@ -436,19 +425,8 @@
         </div>
     </div>
 
-    <script type="text/javascript">
-        document.getElementById("addCourse").onclick = function () {
 
-            for (var x = 1; x < 2; x++) {
-
-                document.getElementById("addCourseCode").innerHTML = '<input type="text" placeholder="Course Code" name="Course Code" class="form-group">';
-
-                document.getElementById("addCourseUnit").innerHTML = '<input type="text" placeholder="Course Unit" name="Course Unit" class="form-group">';
-
-            }
-        }
-    </script>
-
+    <script src="/scripts.js"></script>
     <script src="node_modules\bootstrap\dist\js\bootstrap.js"></script>
 </body>
 
