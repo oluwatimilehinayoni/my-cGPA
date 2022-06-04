@@ -1,3 +1,9 @@
+
+/** 
+ * ADD INPUT FIELD FOR MORE COURSES
+
+*/
+
 let courseRow = 5
 semesterRow = 1;
 
@@ -9,7 +15,7 @@ function addCourse() {
                     <input type="text" placeholder="Course Code">\
                 </div>\
                 <div class="col-sm-4 border">\
-                   <select name="grade_'+ courseRow + '" id="grade" class="">\
+                   <select name="grade_'+ courseRow + '" id="grade" onkeyup="calculateGrade(this.value)" class="">\
                        <option value="" selected>Grade</option>\
                             <option value="A">A</option>\
                             <option value="B">B</option>\
@@ -20,7 +26,7 @@ function addCourse() {
                         </select>\
                 </div>\
                 <div class="col-sm-3 border">\
-                    <input type="number" name="course_unit_'+ courseRow + '" placeholder="Course Unit" value="' + courseRow + '">\
+                    <input type="number" name="course_unit_'+ courseRow + '" placeholder="Course Unit" onkeyup="calculateCourseUnit(this.value)">\
                 </div>\
         </div > ';
 
@@ -28,6 +34,12 @@ function addCourse() {
     return courseDiv.innerHTML += html
 }
 
+
+
+/** 
+ * ADD INPUT FIELD FOR MORE SEMESTER
+
+*/
 
 function addSemester() {
     semesterRow += 1;
@@ -46,7 +58,7 @@ function addSemester() {
                 <input type="text" placeholder="Course Code" class="">\
             </div>\
                         <div class="col-sm-4 border">\
-                <select name="grade_'+ courseRow + '" id="grade" class="">\
+                <select name="grade_'+ courseRow + '" id="grade" onkeyup="calculateGrade(this.value)">\
                     <option value="" selected>Grade</option>\
                     <option value="A">A</option>\
                     <option value="B">B</option>\
@@ -56,11 +68,56 @@ function addSemester() {
                     <option value="F">F</option>\
                 </select>\
             </div>\
-<div class="col-sm-3 border">\
-                <input type="number" name="course_unit_'+ courseRow + '" placeholder="Course Unit" value="' + courseRow + '">\
+            <div class="col-sm-3 border">\
+                <input type="number" name="course_unit_'+ courseRow + '" placeholder="Course Unit" onkeyup="calculateCourseUnit(this.value)">\
             </div>\
+            <input type="hidden" class="form-control" name="totalCourse" id="totalCourse" value="'+ courseRow + '">\
         </div> ';
 
     var courseDiv = document.getElementById("addCourseDiv")
     return courseDiv.innerHTML += html
+
+}
+
+
+/** 
+ * REAL-TIME FUNCTIONALITY
+ * 
+ * SENDS THE INPUTS TO THE PHP PAGE
+
+*/
+
+function calculateGrade(str) {
+    if (str.length == 0) {
+        document.getElementById("result").innerHTML = "";
+        document.getElementById("result").style.border = "0px";
+        return;
+    }
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("result").innerHTML = this.responseText;
+            // document.getElementById("result").style.border = "1px solid #A5ACB2";
+        }
+    }
+    xmlhttp.open("GET", "function.php?g=" + str, true);
+    xmlhttp.send();
+}
+
+
+function calculateCourseUnit(str) {
+    if (str.length == 0) {
+        document.getElementById("result").innerHTML = "";
+        document.getElementById("result").style.border = "0px";
+        return;
+    }
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("result").innerHTML = this.responseText;
+            // document.getElementById("result").style.border = "1px solid #A5ACB2";
+        }
+    }
+    xmlhttp.open("GET", "function.php?u=" + str, true);
+    xmlhttp.send();
 }

@@ -1,8 +1,5 @@
 <?php
 
-include 'controller/tpu.php';
-include 'controller/tcu.php';
-
 class gpa
 {
     private $tpu;
@@ -10,7 +7,7 @@ class gpa
 
     public function __construct(int $tpu, int $tcu)
     {
-        //CREATES THE TOTAL POINT UNIT(TPU) AND TOTAL COURSE UNIT(TCU)
+        //ADDS THE TOTAL POINT UNIT(TPU) AND TOTAL COURSE UNIT(TCU)
         $this->tpu = $tpu;
         $this->tcu = $tcu;
     }

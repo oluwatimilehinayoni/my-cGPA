@@ -72,7 +72,7 @@
                             <button class="btn btn-primary btn-lg">Calculate my GPA!</button>
                         </a>
                     </div>
-                    <img class="img-fluid w-50 d-none d-sm-block" src="assets\images\banner.png" alt="">
+                    <img class="img-fluid w-50 d-none d-sm-block" src="assets/images/mycgpa_banner.jpg" alt="">
                 </div>
             </div>
         </section>
@@ -101,7 +101,7 @@
                             </div>
 
                             <div class="col-sm-4 border">
-                                <select name="grade_1" id="grade" class="">
+                                <select name="grade_1" id="grade" onkeyup="calculateGradeGrade(this.value)" class="">
                                     <option value="" selected>Grade</option>
                                     <option value="A">A</option>
                                     <option value="B">B</option>
@@ -113,7 +113,8 @@
                             </div>
 
                             <div class="col-sm-3 border">
-                                <input type="number" name="course_unit_1" placeholder="Course Unit" class="">
+                                <input type="number" name="course_unit_1" placeholder="Course Unit"
+                                    onkeyup="calculateCourseUnit(this.value)" class="">
                             </div>
                         </div>
                         <!--  ============ 2  ============  -->
@@ -123,7 +124,7 @@
                             </div>
 
                             <div class="col-sm-4 border">
-                                <select name="grade_2" id="grade" class="">
+                                <select name="grade_2" id="grade" onkeyup="calculateGrade(this.value)" class="">
                                     <option value="" selected>Grade</option>
                                     <option value="A">A</option>
                                     <option value="B">B</option>
@@ -135,7 +136,8 @@
                             </div>
 
                             <div class="col-sm-3 border">
-                                <input type="number" name="course_unit_2" placeholder="Course Unit" class="">
+                                <input type="number" name="course_unit_2" placeholder="Course Unit"
+                                    onkeyup="calculateCourseUnit(this.value)" class="">
                             </div>
                         </div>
                         <!--  ============ 3  ============  -->
@@ -145,7 +147,7 @@
                             </div>
 
                             <div class="col-sm-4 border">
-                                <select name="grade_3" id="grade" class="">
+                                <select name="grade_3" id="grade" onkeyup="calculateGrade(this.value)" class="">
                                     <option value="" selected>Grade</option>
                                     <option value="A">A</option>
                                     <option value="B">B</option>
@@ -157,7 +159,8 @@
                             </div>
 
                             <div class="col-sm-3 border">
-                                <input type="number" name="course_unit_3" placeholder="Course Unit" class="">
+                                <input type="number" name="course_unit_3" placeholder="Course Unit"
+                                    onkeyup="calculateCourseUnit(this.value)" class="">
                             </div>
                         </div>
                         <!--  ============ 4  ============  -->
@@ -167,7 +170,7 @@
                             </div>
 
                             <div class="col-sm-4 border">
-                                <select name="grade_4" id="grade" class="">
+                                <select name="grade_4" id="grade" onkeyup="calculateGrade(this.value)" class="">
                                     <option value="" selected>Grade</option>
                                     <option value="A">A</option>
                                     <option value="B">B</option>
@@ -179,7 +182,8 @@
                             </div>
 
                             <div class="col-sm-3 border">
-                                <input type="number" name="course_unit_4" placeholder="Course Unit" class="">
+                                <input type="number" name="course_unit_4" placeholder="Course Unit"
+                                    onkeyup="calculateCourseUnit(this.value)" class="">
                             </div>
                         </div>
                         <!--  ============ 5  ============  -->
@@ -189,7 +193,7 @@
                             </div>
 
                             <div class="col-sm-4 border">
-                                <select name="grade_5" id="grade" class="">
+                                <select name="grade_5" id="grade" onkeyup="calculateGrade(this.value)" class="">
                                     <option value="" selected>Grade</option>
                                     <option value="A">A</option>
                                     <option value="B">B</option>
@@ -201,21 +205,25 @@
                             </div>
 
                             <div class="col-sm-3 border">
-                                <input type="number" name="course_unit_5" placeholder="Course Unit" class="">
+                                <input type="number" name="course_unit_5" placeholder="Course Unit"
+                                    onkeyup="calculateCourseUnit(this.value)" class="">
                             </div>
                         </div>
 
                         <!--  ==========Another Course  =========== -->
                         <div id="addCourseDiv"></div>
                         <!--  ==========Another Course Ends  =========== -->
+
+
                     </form>
 
 
                     <div class="mt-4 mb-4">
-                        Semester 1 GPA:
+                        <!--- Semester 1 GPA:
                         <span id="">
                             <strong>0.00</strong>
                         </span>
+                    -->
 
                         <button class="ms-5 btn btn-outline-primary text-dark" onclick="addCourse()">
                             Add Course
@@ -233,7 +241,7 @@
 
                         <div class="col ms-5">
                             <div id="cgpaResult">
-                                <p class="text-center">0.00</p>
+                                <p class="text-center" id="result">0.00</p>
                                 <span>Cummulative GPA</span>
                             </div>
                         </div>
@@ -259,24 +267,35 @@
 
 
             <div>
-                <section id="HowToUse" class="mb-4 HowToUse">
-                    <h1>How to Use</h1>
-                    <small>To use mycGPA calculator, follow the steps below:</small>
-                    <ul>
-                        <li>Fill in the fields with your course code, course unit and grade</li>
-                        <li>
-                            Click the 'Add Course' button <button disabled="disabled"
-                                class="btn btn-outline-primary text-dark">
-                                Add Course</button> to add more courses
-                        </li>
-                        <li>Click the 'Add Semester' button to add new fields for other semesters</li>
-                        <li>After you fill the fields for the semesters, the cGPA is displayed automatically at the
-                            bottom right.
-                        </li>
-                        <li>You have successfully calculated your cGPA. </li>
-                        <strong>Keep Shining!</strong>
-                    </ul>
-                </section>
+                <div class="row">
+                    <div class="col-sm">
+                        <section id="HowToUse" class="mb-4 HowToUse">
+                            <h1>How to Use</h1>
+                            <small>To use mycGPA calculator, follow the steps below:</small>
+                            <ul>
+                                <li>Fill in the fields with your course code, course unit and grade</li>
+                                <li>
+                                    Click the 'Add Course' button <button disabled="disabled"
+                                        class="btn btn-outline-primary text-dark">
+                                        Add Course</button> to add more courses
+                                </li>
+                                <li>Click the 'Add Semester' button to add new fields for other semesters</li>
+                                <li>After you fill the fields for the semesters, the cGPA is displayed automatically at
+                                    the
+                                    bottom right.
+                                </li>
+                                <li>You have successfully calculated your cGPA. </li>
+                                <strong>Keep Shining!</strong>
+                            </ul>
+                        </section>
+                    </div>
+
+                    <div class="col-sm">
+                        <img src="assets/images/mycgpa_howto.png" class="img-fluid w-100 justify-bottom d-sm-block"
+                            alt="HowToUse">
+                    </div>
+                </div>
+
 
 
                 <!--  ===========  ADS SECTION STARTS  ===========  -->
@@ -288,7 +307,7 @@
                 <!--  ===========  ADS SECTION ENDS  ===========  -->
 
 
-                <section id="faq" class="mb-4">
+                <section id="faq" class="my-4">
                     <article class="my-3" id="accordion">
                         <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
                             <h1>FAQ</h1>
