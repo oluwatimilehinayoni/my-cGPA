@@ -20,8 +20,6 @@ $gpa = new gpa($tpu, $tcu);
 echo $gpa->getGpa();
 
 
-
-
 /*
 $tcu = 0;
 

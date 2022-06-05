@@ -121,3 +121,14 @@ function calculateCourseUnit(str) {
     xmlhttp.open("GET", "function.php?u=" + str, true);
     xmlhttp.send();
 }
+
+<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+    
+      window.googletag = window.googletag || {cmd: []};
+      googletag.cmd.push(function() {
+        googletag
+            .defineSlot(
+                '/6355419/Travel/Europe/France/Paris', [300, 250], 'banner-ad')
+            .addService(googletag.pubads());
+        googletag.enableServices();
+      });

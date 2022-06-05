@@ -252,10 +252,12 @@
 
             <!--  ===========  ADS SECTION STARTS  ===========  -->
             <div class="col-sm-4 ads">
-                <div class="bg-primary justify-content-*-end text-align p-5 mb-4">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum id debitis est delectus incidunt
-                    commodi molestiae ex blanditiis repellendus, repellat, doloremque quia qui voluptatibus, odio
-                    deleniti cumque.
+                <div id="banner-ad" style="width: 300px; height: 250px;">
+                    <script>
+                        googletag.cmd.push(function () {
+                            googletag.display('banner-ad');
+                        });
+                    </script>
                 </div>
 
                 <div class="bg-primary justify-content-*-end p-5 mb-3">
@@ -270,7 +272,7 @@
                 <div class="row">
                     <div class="col-sm">
                         <section id="HowToUse" class="mb-4 HowToUse">
-                            <h1>How to Use</h1>
+                            <h1> <span><i class="bi bi-card-heading"></i></span> How to Use</h1>
                             <small>To use mycGPA calculator, follow the steps below:</small>
                             <ul>
                                 <li>Fill in the fields with your course code, course unit and grade</li>
@@ -291,7 +293,7 @@
                     </div>
 
                     <div class="col-sm">
-                        <img src="assets/images/mycgpa_howto.png" class="img-fluid w-100 justify-bottom d-sm-block"
+                        <img src="assets/images/mycgpa_howto.png" class="img-fluid w-80 justify-bottom d-sm-block"
                             alt="HowToUse">
                     </div>
                 </div>
