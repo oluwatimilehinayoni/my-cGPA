@@ -15,7 +15,7 @@ function addCourse() {
                     <input type="text" placeholder="Course Code">\
                 </div>\
                 <div class="col-sm-4 border">\
-                   <select name="grade_'+ courseRow + '" id="grade" onkeyup="calculateGrade(this.value)" class="">\
+                   <select name="grade_'+ courseRow + '" id="grade" onchange="calculateGrade(this.value)" class="course_grade">\
                        <option value="" selected>Grade</option>\
                             <option value="A">A</option>\
                             <option value="B">B</option>\
@@ -26,7 +26,7 @@ function addCourse() {
                         </select>\
                 </div>\
                 <div class="col-sm-3 border">\
-                    <input type="number" name="course_unit_'+ courseRow + '" placeholder="Course Unit" onkeyup="calculateCourseUnit(this.value)">\
+                    <input type="number" name="course_unit_'+ courseRow + '" placeholder="Course Unit" onchange="calculateCourseUnit(this.value)" class="course_unit">\
                 </div>\
         </div > ';
 
@@ -58,7 +58,7 @@ function addSemester() {
                 <input type="text" placeholder="Course Code" class="">\
             </div>\
                         <div class="col-sm-4 border">\
-                <select name="grade_'+ courseRow + '" id="grade" onkeyup="calculateGrade(this.value)">\
+                <select name="grade_'+ courseRow + '" id="grade" onchange="calculateGrade(this.value)" class="course_grade">\
                     <option value="" selected>Grade</option>\
                     <option value="A">A</option>\
                     <option value="B">B</option>\
@@ -69,24 +69,52 @@ function addSemester() {
                 </select>\
             </div>\
             <div class="col-sm-3 border">\
-                <input type="number" name="course_unit_'+ courseRow + '" placeholder="Course Unit" onkeyup="calculateCourseUnit(this.value)">\
+                <input type="number" name="course_unit_'+ courseRow + '" placeholder="Course Unit" onchange="calculateCourseUnit(this.value)" class="course_unit">\
             </div>\
             <input type="hidden" class="form-control" name="totalCourse" id="totalCourse" value="'+ courseRow + '">\
         </div> ';
 
-    var courseDiv = document.getElementById("addCourseDiv")
-    return courseDiv.innerHTML += html
-
+    const courseDiv = document.getElementById("addCourseDiv")
+    // return courseDiv.innerHTML += html
+    return courseDiv.insertAdjacentHTML(afterend, html)
 }
 
 
 /** 
  * REAL-TIME FUNCTIONALITY
  * 
- * SENDS THE INPUTS TO THE PHP PAGE
 
 */
 
+function calculateCourseUnit() {
+
+    let courseUnit = document.querySelectorAll('.course_unit');
+    let totalUnit = 0;
+
+
+    for (let i = 0; i < courseUnit.length; i++) {
+        totalUnit += Number(courseUnit[i].value);
+
+    }
+    // GET TOTAL UNIT 
+    console.log(totalUnit);
+}
+
+function calculateGrade() {
+
+    let courseGrade = document.querySelectorAll('.course_grade');
+    let totalGrade = 0;
+
+    for (let i = 0; i < courseGrade.length; i++) {
+        totalGrade += courseGrade[i].value ?? 0;
+    }
+    // GET TOTAL UNIT 
+    console.log(totalGrade);
+}
+
+
+
+/*
 function calculateGrade(str) {
     if (str.length == 0) {
         document.getElementById("result").innerHTML = "";
@@ -122,13 +150,4 @@ function calculateCourseUnit(str) {
     xmlhttp.send();
 }
 
-<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
-    
-      window.googletag = window.googletag || {cmd: []};
-      googletag.cmd.push(function() {
-        googletag
-            .defineSlot(
-                '/6355419/Travel/Europe/France/Paris', [300, 250], 'banner-ad')
-            .addService(googletag.pubads());
-        googletag.enableServices();
-      });
+*/

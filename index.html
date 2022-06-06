@@ -101,7 +101,8 @@
                             </div>
 
                             <div class="col-sm-4 border">
-                                <select name="grade_1" id="grade" onkeyup="calculateGradeGrade(this.value)" class="">
+                                <select name="grade_1" id="grade" onchange="calculateGrade(this.value)"
+                                    class="course_grade">
                                     <option value="" selected>Grade</option>
                                     <option value="A">A</option>
                                     <option value="B">B</option>
@@ -114,7 +115,7 @@
 
                             <div class="col-sm-3 border">
                                 <input type="number" name="course_unit_1" placeholder="Course Unit"
-                                    onkeyup="calculateCourseUnit(this.value)" class="">
+                                    onchange="calculateCourseUnit(this.value)" class="course_unit">
                             </div>
                         </div>
                         <!--  ============ 2  ============  -->
@@ -124,7 +125,8 @@
                             </div>
 
                             <div class="col-sm-4 border">
-                                <select name="grade_2" id="grade" onkeyup="calculateGrade(this.value)" class="">
+                                <select name="grade_2" id="grade" onchange="calculateGrade(this.value)"
+                                    class="course_grade">
                                     <option value="" selected>Grade</option>
                                     <option value="A">A</option>
                                     <option value="B">B</option>
@@ -137,7 +139,7 @@
 
                             <div class="col-sm-3 border">
                                 <input type="number" name="course_unit_2" placeholder="Course Unit"
-                                    onkeyup="calculateCourseUnit(this.value)" class="">
+                                    onchange="calculateCourseUnit(this.value)" class="course_unit">
                             </div>
                         </div>
                         <!--  ============ 3  ============  -->
@@ -147,7 +149,8 @@
                             </div>
 
                             <div class="col-sm-4 border">
-                                <select name="grade_3" id="grade" onkeyup="calculateGrade(this.value)" class="">
+                                <select name="grade_3" id="grade" onchange="calculateGrade(this.value)"
+                                    class="course_grade">
                                     <option value="" selected>Grade</option>
                                     <option value="A">A</option>
                                     <option value="B">B</option>
@@ -160,7 +163,7 @@
 
                             <div class="col-sm-3 border">
                                 <input type="number" name="course_unit_3" placeholder="Course Unit"
-                                    onkeyup="calculateCourseUnit(this.value)" class="">
+                                    onchange="calculateCourseUnit(this.value)" class="course_unit">
                             </div>
                         </div>
                         <!--  ============ 4  ============  -->
@@ -170,7 +173,8 @@
                             </div>
 
                             <div class="col-sm-4 border">
-                                <select name="grade_4" id="grade" onkeyup="calculateGrade(this.value)" class="">
+                                <select name="grade_4" id="grade" onchange="calculateGrade(this.value)"
+                                    class="course_grade">
                                     <option value="" selected>Grade</option>
                                     <option value="A">A</option>
                                     <option value="B">B</option>
@@ -183,7 +187,7 @@
 
                             <div class="col-sm-3 border">
                                 <input type="number" name="course_unit_4" placeholder="Course Unit"
-                                    onkeyup="calculateCourseUnit(this.value)" class="">
+                                    onchange="calculateCourseUnit(this.value)" class="course_unit">
                             </div>
                         </div>
                         <!--  ============ 5  ============  -->
@@ -193,7 +197,8 @@
                             </div>
 
                             <div class="col-sm-4 border">
-                                <select name="grade_5" id="grade" onkeyup="calculateGrade(this.value)" class="">
+                                <select name="grade_5" id="grade" onchange="calculateGrade(this.value)"
+                                    class="course_grade">
                                     <option value="" selected>Grade</option>
                                     <option value="A">A</option>
                                     <option value="B">B</option>
@@ -206,7 +211,7 @@
 
                             <div class="col-sm-3 border">
                                 <input type="number" name="course_unit_5" placeholder="Course Unit"
-                                    onkeyup="calculateCourseUnit(this.value)" class="">
+                                    onchange="calculateCourseUnit(this.value)" class="course_unit">
                             </div>
                         </div>
 
@@ -270,7 +275,7 @@
 
             <div>
                 <div class="row">
-                    <div class="col-sm">
+                    <div class="col-sm-7">
                         <section id="HowToUse" class="mb-4 HowToUse">
                             <h1> <span><i class="bi bi-card-heading"></i></span> How to Use</h1>
                             <small>To use mycGPA calculator, follow the steps below:</small>
@@ -292,8 +297,8 @@
                         </section>
                     </div>
 
-                    <div class="col-sm">
-                        <img src="assets/images/mycgpa_howto.png" class="img-fluid w-80 justify-bottom d-sm-block"
+                    <div class="col-sm-5" style>
+                        <img src="assets/images/mycgpa_howto.jpg" class="img-fluid w-100 justify-bottom d-sm-block"
                             alt="HowToUse">
                     </div>
                 </div>
