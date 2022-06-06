@@ -30,8 +30,9 @@ function addCourse() {
                 </div>\
         </div > ';
 
-    var courseDiv = document.getElementById("addCourseDiv")
-    return courseDiv.innerHTML += html
+    const courseDiv = document.querySelector("#addCourseDiv");
+    // return courseDiv.innerHTML += html
+    courseDiv.insertAdjacentHTML('beforeend', html);
 }
 
 
@@ -74,42 +75,67 @@ function addSemester() {
             <input type="hidden" class="form-control" name="totalCourse" id="totalCourse" value="'+ courseRow + '">\
         </div> ';
 
-    const courseDiv = document.getElementById("addCourseDiv")
+    const courseDiv = document.querySelector("#addCourseDiv");
     // return courseDiv.innerHTML += html
-    return courseDiv.insertAdjacentHTML(afterend, html)
+    courseDiv.insertAdjacentHTML('beforeend', html);
 }
 
 
 /** 
  * REAL-TIME FUNCTIONALITY
  * 
+ * CALCULATES THE TCU AND TPU
 
 */
 
 function calculateCourseUnit() {
 
     let courseUnit = document.querySelectorAll('.course_unit');
-    let totalUnit = 0;
-
+    let TCU = 0;
 
     for (let i = 0; i < courseUnit.length; i++) {
-        totalUnit += Number(courseUnit[i].value);
+        TCU += Number(courseUnit[i].value);
 
     }
     // GET TOTAL UNIT 
-    console.log(totalUnit);
+    console.log(TCU);
 }
 
 function calculateGrade() {
 
     let courseGrade = document.querySelectorAll('.course_grade');
-    let totalGrade = 0;
+
+    if (courseGrade.value == A) {
+        //do this
+    }
+
+    if (courseGrade.value == B) {
+        //do this
+    }
+
+    if (courseGrade.value == C) {
+        //do this
+    }
+
+    if (courseGrade.value == D) {
+        //do this
+    }
+
+    if (courseGrade.value == E) {
+        //do this
+    }
+
+    if (courseGrade.value == F) {
+        //do this
+    }
+
+    let TPU = 0;
 
     for (let i = 0; i < courseGrade.length; i++) {
-        totalGrade += courseGrade[i].value ?? 0;
+        TPU += Number(courseGrade[i].value) ?? 0;
     }
     // GET TOTAL UNIT 
-    console.log(totalGrade);
+    console.log(TPU);
 }
 
 
