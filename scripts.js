@@ -6,6 +6,10 @@
 
 let addCourseFields = document.querySelector('.add_course_fields');
 let addSemesterFields = document.querySelector('.add_semester_fields');
+let result = document.querySelector('#gradeResult');
+
+addCourseFields.addEventListener('click', addCourse);
+addSemesterFields.addEventListener('click', addSemester);
 
 let courseRow = 5
 semesterRow = 1;
@@ -101,6 +105,7 @@ function calculateCourseUnit() {
 
     }
     // GET TOTAL UNIT 
+    // return tcu;
     console.log(tcu);
 }
 
@@ -110,72 +115,65 @@ function calculateGrade() {
     let tpu = 0;
 
     for (let i = 0; i < courseGrade.length; i++) {
-
-        tpu += courseGrade[i].value;
+        if (courseGrade[i].value == 'A') {
+            tpu += 5;
+        }
+        if (courseGrade[i].value == 'B') {
+            tpu += 4;
+        }
+        if (courseGrade[i].value == 'C') {
+            tpu += 3;
+        }
+        if (courseGrade[i].value == 'D') {
+            tpu += 2;
+        }
+        if (courseGrade[i].value == 'E') {
+            tpu += 1;
+        }
+        if (courseGrade[i].value == 'F') {
+            tpu += 0;
+        }
 
     }
-    // GET TOTAL UNIT  
-    tpu = Array.from(tpu);
-    tpu.shift();
-
-    //Returns the Index of the grades in the array
-    A = tpu.indexOf('A');
-    B = tpu.indexOf('B');
-    C = tpu.indexOf('C');
-    D = tpu.indexOf('D');
-    E = tpu.indexOf('E');
-    F = tpu.indexOf('F');
-
-    // //Convert the grades to the equivalent point ======= [A,B,C,D,E,F]=>[5,4,3,2,1,0]
-    tpu[A] = 5;
-    tpu[B] = 4;
-    tpu[C] = 3;
-    tpu[D] = 2;
-    tpu[E] = 1;
-    tpu[F] = 0;
-
-
+    //   TOTAL COURSE UNIT
+    // return tpu;
     console.log(tpu);
 }
 
-addCourseFields.addEventListener('click', addCourse);
-addSemesterFields.addEventListener('click', addSemester);
 
 
-/*
-function calculateGrade(str) {
-    if (str.length == 0) {
-        document.getElementById("result").innerHTML = "";
-        document.getElementById("result").style.border = "0px";
-        return;
-    }
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("result").innerHTML = this.responseText;
-            // document.getElementById("result").style.border = "1px solid #A5ACB2";
-        }
-    }
-    xmlhttp.open("GET", "function.php?g=" + str, true);
-    xmlhttp.send();
-}
+
+/**
+ * CALCULATES THE GPA FROM THE TPU AND TCU
+ *
+ * DISPLAYS THE RESULT ON PAGE
+ */
+
+// class GPA {
+//     tpu;
+//     tcu;
+
+//     constructor(tpu, tcu) {
+//         this.tpu = tpu;
+//         this.tcu = tcu;
+//     }
+
+//     getGPA() {
+//         this.tpu / this.tcu;
+//     }
+// }
 
 
-function calculateCourseUnit(str) {
-    if (str.length == 0) {
-        document.getElementById("result").innerHTML = "";
-        document.getElementById("result").style.border = "0px";
-        return;
-    }
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("result").innerHTML = this.responseText;
-            // document.getElementById("result").style.border = "1px solid #A5ACB2";
-        }
-    }
-    xmlhttp.open("GET", "function.php?u=" + str, true);
-    xmlhttp.send();
-}
 
-*/
+// let gpa = new GPA(calculateGrade(), calculateCourseUnit());
+// gpa.getGPA();
+
+
+
+unit = calculateCourseUnit();
+grade = calculateGrade();
+
+
+
+result.textContent = grade / unit;
+console.log(result.textContent);
