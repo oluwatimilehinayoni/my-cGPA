@@ -104,9 +104,8 @@ function calculateCourseUnit() {
         tcu += Number(courseUnit[i].value);
 
     }
-    // GET TOTAL UNIT 
-    // return tcu;
-    console.log(tcu);
+    // TOTAL COURSE UNIT 
+    return Number(tcu);
 }
 
 function calculateGrade() {
@@ -135,11 +134,24 @@ function calculateGrade() {
         }
 
     }
-    //   TOTAL COURSE UNIT
-    // return tpu;
-    console.log(tpu);
+    //   TOTAL POINT UNIT
+    return Number(tpu);
 }
 
+
+function calculateGPA(tpu, tcu) {
+    let gpa;
+
+    gpa = tpu / tcu;
+
+    result.textContent = gpa;
+    console.log(result.textContent);
+}
+
+calculateGrade();
+calculateCourseUnit();
+
+calculateGPA(calculateGrade(), calculateCourseUnit());
 
 
 
@@ -169,11 +181,3 @@ function calculateGrade() {
 // gpa.getGPA();
 
 
-
-unit = calculateCourseUnit();
-grade = calculateGrade();
-
-
-
-result.textContent = grade / unit;
-console.log(result.textContent);
