@@ -115,27 +115,27 @@ function calculateGrade() {
 
     for (let i = 0; i < courseGrade.length; i++) {
         if (courseGrade[i].value == 'A') {
-            tpu += 5;
+            Number(tpu += 5);
         }
         if (courseGrade[i].value == 'B') {
-            tpu += 4;
+            Number(tpu += 4);
         }
         if (courseGrade[i].value == 'C') {
-            tpu += 3;
+            Number(tpu += 3);
         }
         if (courseGrade[i].value == 'D') {
-            tpu += 2;
+            Number(tpu += 2);
         }
         if (courseGrade[i].value == 'E') {
-            tpu += 1;
+            Number(tpu += 1);
         }
         if (courseGrade[i].value == 'F') {
-            tpu += 0;
+            Number(tpu += 0);
         }
 
     }
     //   TOTAL POINT UNIT
-    return Number(tpu);
+    return tpu;
 }
 
 
@@ -145,7 +145,7 @@ function calculateGPA(tpu, tcu) {
     gpa = tpu / tcu;
 
     result.textContent = gpa;
-    console.log(result.textContent);
+    // console.log(result.textContent);
 }
 
 calculateGrade();
