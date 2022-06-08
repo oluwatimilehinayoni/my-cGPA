@@ -4,6 +4,9 @@
 
 */
 
+let addCourseFields = document.querySelector('.add_course_fields');
+let addSemesterFields = document.querySelector('.add_semester_fields');
+
 let courseRow = 5
 semesterRow = 1;
 
@@ -26,7 +29,7 @@ function addCourse() {
                         </select>\
                 </div>\
                 <div class="col-sm-3 border">\
-                    <input type="number" name="course_unit_'+ courseRow + '" placeholder="Course Unit" onchange="calculateCourseUnit(this.value)" class="course_unit">\
+                    <input type="number" name="course_unit_'+ courseRow + '" onchange="calculateCourseUnit(this.value)" placeholder="Course Unit" min="1" max="6" class="course_unit">\
                 </div>\
         </div > ';
 
@@ -70,7 +73,7 @@ function addSemester() {
                 </select>\
             </div>\
             <div class="col-sm-3 border">\
-                <input type="number" name="course_unit_'+ courseRow + '" placeholder="Course Unit" onchange="calculateCourseUnit(this.value)" class="course_unit">\
+                <input type="number" name="course_unit_'+ courseRow + '" placeholder="Course Unit" min="1" max="6" onchange="calculateCourseUnit(this.value)" class="course_unit">\
             </div>\
             <input type="hidden" class="form-control" name="totalCourse" id="totalCourse" value="'+ courseRow + '">\
         </div> ';
@@ -84,60 +87,59 @@ function addSemester() {
 /** 
  * REAL-TIME FUNCTIONALITY
  * 
- * CALCULATES THE TCU AND TPU
+ * CALCULATES THE tcu AND tpu  ---- Total Point Unit and Total Course Unit -------
 
 */
 
 function calculateCourseUnit() {
 
     let courseUnit = document.querySelectorAll('.course_unit');
-    let TCU = 0;
+    let tcu = 0;
 
     for (let i = 0; i < courseUnit.length; i++) {
-        TCU += Number(courseUnit[i].value);
+        tcu += Number(courseUnit[i].value);
 
     }
     // GET TOTAL UNIT 
-    console.log(TCU);
+    console.log(tcu);
 }
 
 function calculateGrade() {
 
     let courseGrade = document.querySelectorAll('.course_grade');
-
-    if (courseGrade.value == A) {
-        //do this
-    }
-
-    if (courseGrade.value == B) {
-        //do this
-    }
-
-    if (courseGrade.value == C) {
-        //do this
-    }
-
-    if (courseGrade.value == D) {
-        //do this
-    }
-
-    if (courseGrade.value == E) {
-        //do this
-    }
-
-    if (courseGrade.value == F) {
-        //do this
-    }
-
-    let TPU = 0;
+    let tpu = 0;
 
     for (let i = 0; i < courseGrade.length; i++) {
-        TPU += Number(courseGrade[i].value) ?? 0;
+
+        tpu += courseGrade[i].value;
+
     }
-    // GET TOTAL UNIT 
-    console.log(TPU);
+    // GET TOTAL UNIT  
+    tpu = Array.from(tpu);
+    tpu.shift();
+
+    //Returns the Index of the grades in the array
+    A = tpu.indexOf('A');
+    B = tpu.indexOf('B');
+    C = tpu.indexOf('C');
+    D = tpu.indexOf('D');
+    E = tpu.indexOf('E');
+    F = tpu.indexOf('F');
+
+    // //Convert the grades to the equivalent point ======= [A,B,C,D,E,F]=>[5,4,3,2,1,0]
+    tpu[A] = 5;
+    tpu[B] = 4;
+    tpu[C] = 3;
+    tpu[D] = 2;
+    tpu[E] = 1;
+    tpu[F] = 0;
+
+
+    console.log(tpu);
 }
 
+addCourseFields.addEventListener('click', addCourse);
+addSemesterFields.addEventListener('click', addSemester);
 
 
 /*

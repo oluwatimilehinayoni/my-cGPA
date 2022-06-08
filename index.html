@@ -2,12 +2,19 @@
 <html lang="en">
 
 <head>
+    <!-- META TAGS-->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <title>myCGPA</title>
+    <!--META TAGS ENDS-->
 
+    <!--Stylesheet-->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    <!--Scripts-->
+    <script src="node_modules\bootstrap\dist\js\bootstrap.js"></script>
+    <script src="/scripts.js" defer></script>
+    <title>myCGPA</title>
 </head>
 
 <body>
@@ -101,8 +108,8 @@
                             </div>
 
                             <div class="col-sm-4 border">
-                                <select name="grade_1" id="grade" onchange="calculateGrade(this.value)"
-                                    class="course_grade">
+                                <select name="grade_1" id="grade" class="course_grade"
+                                    onchange="calculateGrade(this.value)">
                                     <option value="" selected>Grade</option>
                                     <option value="A">A</option>
                                     <option value="B">B</option>
@@ -114,8 +121,8 @@
                             </div>
 
                             <div class="col-sm-3 border">
-                                <input type="number" name="course_unit_1" placeholder="Course Unit"
-                                    onchange="calculateCourseUnit(this.value)" class="course_unit">
+                                <input type="number" name="course_unit_1" placeholder="Course Unit" class="course_unit"
+                                    min="1" max="6" onchange="calculateCourseUnit(this.value)">
                             </div>
                         </div>
                         <!--  ============ 2  ============  -->
@@ -125,8 +132,8 @@
                             </div>
 
                             <div class="col-sm-4 border">
-                                <select name="grade_2" id="grade" onchange="calculateGrade(this.value)"
-                                    class="course_grade">
+                                <select name="grade_2" id="grade" class="course_grade"
+                                    onchange="calculateGrade(this.value)">
                                     <option value="" selected>Grade</option>
                                     <option value="A">A</option>
                                     <option value="B">B</option>
@@ -138,8 +145,8 @@
                             </div>
 
                             <div class="col-sm-3 border">
-                                <input type="number" name="course_unit_2" placeholder="Course Unit"
-                                    onchange="calculateCourseUnit(this.value)" class="course_unit">
+                                <input type="number" name="course_unit_2" placeholder="Course Unit" class="course_unit"
+                                    min="1" max="6" onchange="calculateCourseUnit(this.value)">
                             </div>
                         </div>
                         <!--  ============ 3  ============  -->
@@ -149,8 +156,8 @@
                             </div>
 
                             <div class="col-sm-4 border">
-                                <select name="grade_3" id="grade" onchange="calculateGrade(this.value)"
-                                    class="course_grade">
+                                <select name="grade_3" id="grade" class="course_grade"
+                                    onchange="calculateGrade(this.value)">
                                     <option value="" selected>Grade</option>
                                     <option value="A">A</option>
                                     <option value="B">B</option>
@@ -162,8 +169,8 @@
                             </div>
 
                             <div class="col-sm-3 border">
-                                <input type="number" name="course_unit_3" placeholder="Course Unit"
-                                    onchange="calculateCourseUnit(this.value)" class="course_unit">
+                                <input type="number" name="course_unit_3" placeholder="Course Unit" class="course_unit"
+                                    min="1" max="6" onchange="calculateCourseUnit(this.value)">
                             </div>
                         </div>
                         <!--  ============ 4  ============  -->
@@ -173,8 +180,8 @@
                             </div>
 
                             <div class="col-sm-4 border">
-                                <select name="grade_4" id="grade" onchange="calculateGrade(this.value)"
-                                    class="course_grade">
+                                <select name="grade_4" id="grade" class="course_grade"
+                                    onchange="calculateGrade(this.value)">
                                     <option value="" selected>Grade</option>
                                     <option value="A">A</option>
                                     <option value="B">B</option>
@@ -186,8 +193,8 @@
                             </div>
 
                             <div class="col-sm-3 border">
-                                <input type="number" name="course_unit_4" placeholder="Course Unit"
-                                    onchange="calculateCourseUnit(this.value)" class="course_unit">
+                                <input type="number" name="course_unit_4" placeholder="Course Unit" class="course_unit"
+                                    min="1" max="6" onchange="calculateCourseUnit(this.value)">
                             </div>
                         </div>
                         <!--  ============ 5  ============  -->
@@ -197,8 +204,8 @@
                             </div>
 
                             <div class="col-sm-4 border">
-                                <select name="grade_5" id="grade" onchange="calculateGrade(this.value)"
-                                    class="course_grade">
+                                <select name="grade_5" id="grade" class="course_grade"
+                                    onchange="calculateGrade(this.value)">
                                     <option value="" selected>Grade</option>
                                     <option value="A">A</option>
                                     <option value="B">B</option>
@@ -210,8 +217,8 @@
                             </div>
 
                             <div class="col-sm-3 border">
-                                <input type="number" name="course_unit_5" placeholder="Course Unit"
-                                    onchange="calculateCourseUnit(this.value)" class="course_unit">
+                                <input type="number" name="course_unit_5" placeholder="Course Unit" class="course_unit"
+                                    min="1" max="6" onchange="calculateCourseUnit(this.value)">
                             </div>
                         </div>
 
@@ -230,7 +237,7 @@
                         </span>
                     -->
 
-                        <button class="ms-5 btn btn-outline-primary text-dark" onclick="addCourse()">
+                        <button class="ms-5 btn btn-outline-primary text-dark add_course_fields">
                             Add Course
                         </button>
                     </div>
@@ -239,7 +246,7 @@
 
                     <div class="row">
                         <div class="col me-5">
-                            <button class="btn btn-lg btn-primary" onclick="addSemester()">
+                            <button class="btn btn-lg btn-primary add_semester_fields">
                                 Add Semester
                             </button>
                         </div>
@@ -453,8 +460,7 @@
     </div>
 
 
-    <script src="/scripts.js"></script>
-    <script src="node_modules\bootstrap\dist\js\bootstrap.js"></script>
+
 </body>
 
 </html>
