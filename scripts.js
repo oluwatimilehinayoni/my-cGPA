@@ -149,38 +149,43 @@ function multiplier() {
     let courseUnit = document.querySelectorAll('.course_unit');
     let key = []; let val = []; let multiplied; let unit_mult = 0; let grade_mult = 0;
 
-    for (let i = 0; i < courseGrade.length; i++) {
-        key[i] += Number(courseUnit[i].value);
+    for (let i = 0; i < courseUnit.length; i++) {
+        unit_mult = courseUnit[i].value;
+        key.push(Number(unit_mult));
 
-        if (courseGrade[i].value == 'A') {
-            grade_mult[i] = Number(5);
-        }
-        if (courseGrade[i].value == 'B') {
-            grade_mult[i] = Number(4);
-        }
-        if (courseGrade[i].value == 'C') {
-            grade_mult[i] = Number(3);
-        }
-        if (courseGrade[i].value == 'D') {
-            grade_mult[i] = Number(2);
-        }
-        if (courseGrade[i].value == 'E') {
-            grade_mult[i] = Number(1);
-        }
-        if (courseGrade[i].value == 'F') {
-            grade_mult[i] = Number(0);
-        }
-        else {
-            grade_mult[i] = 'error';
-        }
-
-        key = unit_mult;
-        val = grade_mult;
-        multiplied += key[i] * val[i];
     }
 
-    console.log('\'Grade: \'  ' + val + '');
-    console.log('\'Unit: \' ' + key + '');
+    for (let i = 0; i < courseGrade.length; i++) {
+        if (courseGrade[i].value === 'A') {
+            grade_mult = 5;
+        }
+        if (courseGrade.value === 'B') {
+            grade_mult = 4;
+        }
+        if (courseGrade.value === 'C') {
+            grade_mult = 3;
+        }
+        if (courseGrade.value === 'D') {
+            grade_mult = 2;
+        }
+        if (courseGrade.value === 'E') {
+            grade_mult = 1;
+        }
+        if (courseGrade.value === 'F') {
+            grade_mult = 0;
+        }
+        else {
+            grade_mult = 'error';
+        }
+
+        val.push(grade_mult);
+        //    multiplied += key[i] * val[i];
+
+    }
+
+    console.log('Grade:  ' + val + ' ');
+    console.log('Unit:  ' + key + '');
+
     // return multiplied;
 
 }
