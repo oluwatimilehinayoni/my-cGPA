@@ -1,19 +1,30 @@
 
+/**
+ * DECLARE VARIABLES FOR FUNCTIONS
+ * 
+ */
+let message = '';
+let courseGrade = document.querySelectorAll('.course_grade');
+let courseUnit = document.querySelectorAll('.course_unit');
+let addCourseFields = document.querySelector('.add_course_fields');
+let addSemesterFields = document.querySelector('.add_semester_fields');
+let result = document.querySelector('#grade_result');
+let resultButton;
+let courseRow = 5
+semesterRow = 1;
+
+
+// *******  EVENTS LISTENERS  ********
+resultButton = document.querySelector('#result_button');
+resultButton.addEventListener('click', getGPA);
+addCourseFields.addEventListener('click', addCourse);
+addSemesterFields.addEventListener('click', addSemester);
+
+
 /** 
  * ADD INPUT FIELD FOR MORE COURSES
 
 */
-
-let addCourseFields = document.querySelector('.add_course_fields');
-let addSemesterFields = document.querySelector('.add_semester_fields');
-let result = document.querySelector('#grade_result');
-
-addCourseFields.addEventListener('click', addCourse);
-addSemesterFields.addEventListener('click', addSemester);
-
-let courseRow = 5
-semesterRow = 1;
-
 function addCourse() {
     courseRow += 1;
     html =
@@ -109,50 +120,15 @@ function calculateCourseUnit() {
     return tcu;
 }
 
+
 function calculateGrade() {
-
-    let courseGrade = document.querySelectorAll('.course_grade');
+    let key = [];
+    let val = [];
     let tpu = 0;
-
-    for (let i = 0; i < courseGrade.length; i++) {
-        if (courseGrade[i].value === 'A') {
-            Number(tpu += 5);
-        }
-        if (courseGrade[i].value === 'B') {
-            Number(tpu += 4);
-        }
-        if (courseGrade[i].value === 'C') {
-            Number(tpu += 3);
-        }
-        if (courseGrade[i].value === 'D') {
-            Number(tpu += 2);
-        }
-        if (courseGrade[i].value === 'E') {
-            Number(tpu += 1);
-        }
-        if (courseGrade[i].value === 'F') {
-            Number(tpu += 0);
-        }
-        else {
-            Number(tpu += 0);
-        }
-
-    }
-    //   TOTAL POINT UNIT
-
-    return tpu;
-}
-
-
-function multiplier() {
-    let courseGrade = document.querySelectorAll('.course_grade');
-    let courseUnit = document.querySelectorAll('.course_unit');
-    let key = []; let val = []; let multiplied; let unit_mult;
-
+    let unit_mult;
 
     for (let i = 0; i < courseUnit.length; i++) {
         unit_mult = courseUnit[i].value;
-        key.push(Number(unit_mult));
 
         let grade_mult = 0;
 
@@ -175,41 +151,33 @@ function multiplier() {
             Number(grade_mult = 0);
         }
 
+        key.push(Number(unit_mult));
         val.push(grade_mult);
-        //    multiplied += key[i] * val[i];
+
+
+        if ((courseGrade[i].value.length && courseUnit[i].value.length) == 0) {
+            message = 'Please Fill in the fields';
+            console.log(message);
+            // return message;
+        }
     }
-
-    // for (let i = 0; i < courseGrade.length; i++) {
-
-
-    // }
 
     console.log('Grade:  ' + val + ' ');
     console.log('Unit:  ' + key + '');
 
-    //     var sum = 0;
-    // for(var i=0; i< arr1.length; i++) {
-    //     sum += arr1[i]*arr2[i];
-    // }
-    // return multiplied;
+    for (var i = 0; i < key.length; i++) {
+        tpu += key[i] * val[i];
+    }
+    console.log(tpu);
+    return tpu;
 
 }
-
 
 function calculateGPA(tpu, tcu) {
     let gpa;
-
-    //start here
-    //end here
-
-    gpa = multiplier() / tcu;
+    gpa = tpu / tcu;
     return gpa;
 }
-
-let resultButton;
-resultButton = document.querySelector('#result_button');
-resultButton.addEventListener('click', getGPA);
-
 
 function getGPA() {
     let y; let x;
@@ -217,6 +185,7 @@ function getGPA() {
     x = calculateCourseUnit();
     y = calculateGrade();
     gpa = calculateGPA(y, x);
+
 
     if (isNaN(gpa)) {
         return result.textContent = '0.00';
@@ -231,9 +200,6 @@ function getGPA() {
 
 }
 
-
-
-//TODO
 
 
 /**
@@ -258,5 +224,36 @@ function getGPA() {
 // }
 
 
+// function calculateGrade() {
 
+//     let courseGrade = document.querySelectorAll('.course_grade');
+//     let tpu = 0;
 
+//     for (let i = 0; i < courseGrade.length; i++) {
+//         if (courseGrade[i].value === 'A') {
+//             Number(tpu += 5);
+//         }
+//         if (courseGrade[i].value === 'B') {
+//             Number(tpu += 4);
+//         }
+//         if (courseGrade[i].value === 'C') {
+//             Number(tpu += 3);
+//         }
+//         if (courseGrade[i].value === 'D') {
+//             Number(tpu += 2);
+//         }
+//         if (courseGrade[i].value === 'E') {
+//             Number(tpu += 1);
+//         }
+//         if (courseGrade[i].value === 'F') {
+//             Number(tpu += 0);
+//         }
+//         else {
+//             Number(tpu += 0);
+//         }
+
+//     }
+//     //   TOTAL POINT UNIT
+
+//     return tpu;
+// }
