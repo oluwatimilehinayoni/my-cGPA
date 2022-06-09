@@ -122,6 +122,9 @@ function calculateCourseUnit() {
 
 
 function calculateGrade() {
+    let courseGrade = document.querySelectorAll('.course_grade');
+    let courseUnit = document.querySelectorAll('.course_unit');
+
     let key = [];
     let val = [];
     let tpu = 0;
@@ -133,44 +136,44 @@ function calculateGrade() {
         let grade_mult = 0;
 
         if (courseGrade[i].value === 'A') {
-            Number(grade_mult = 5);
+            Number(grade_mult += 5);
         }
         if (courseGrade[i].value === 'B') {
-            Number(grade_mult = 4);
+            Number(grade_mult += 4);
         }
         if (courseGrade[i].value === 'C') {
-            Number(grade_mult = 3);
+            Number(grade_mult += 3);
         }
         if (courseGrade[i].value === 'D') {
-            Number(grade_mult = 2);
+            Number(grade_mult += 2);
         }
         if (courseGrade[i].value === 'E') {
-            Number(grade_mult = 1);
+            Number(grade_mult += 1);
         }
         if (courseGrade[i].value === 'F') {
-            Number(grade_mult = 0);
+            Number(grade_mult += 0);
         }
 
         key.push(Number(unit_mult));
         val.push(grade_mult);
 
 
-        if ((courseGrade[i].value.length && courseUnit[i].value.length) == 0) {
+        if (courseGrade[i].value.length == 0) {
             message = 'Please Fill in the fields';
             console.log(message);
             // return message;
         }
     }
 
-    console.log('Grade:  ' + val + ' ');
-    console.log('Unit:  ' + key + '');
-
     for (var i = 0; i < key.length; i++) {
         tpu += key[i] * val[i];
     }
-    console.log(tpu);
+
     return tpu;
 
+    //console.log(tpu);
+    // console.log('Grade:  ' + val + ' ');
+    // console.log('Unit:  ' + key + '');
 }
 
 function calculateGPA(tpu, tcu) {
