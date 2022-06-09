@@ -11307,6 +11307,10 @@ button {
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #ffffff;
   font-size: 20px;
