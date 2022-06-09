@@ -11429,9 +11429,10 @@ div #calculatordiv {
 }
 
 footer {
-  background-color: rgb(191, 138, 210);
+  background-color: rgb(26, 26, 26);
   text-align: center;
-  color: #fff;
+  color: #797F7D;
+  font-size: 0.4rem;
 }
 footer a {
   text-decoration: none;

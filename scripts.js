@@ -69,7 +69,7 @@ function addSemester() {
                  Semester '+ semesterRow + '\
             </div>\
                 <div class="col-sm-1 ms-5">\
-                <button type="button" class="btn btn-danger" data-bs-dismiss="mode">x</button>\
+                <button type="button" class="btn btn-danger" data-bs-dismiss="mode">&times;</button>\
                 </div>\
             </div>\
                     <div class="row">\
@@ -156,19 +156,11 @@ function calculateGrade() {
 
         key.push(Number(unit_mult));
         val.push(grade_mult);
-
-
-        if (courseGrade[i].value.length == 0) {
-            message = 'Please Fill in the fields';
-            console.log(message);
-            // return message;
-        }
     }
 
     for (var i = 0; i < key.length; i++) {
         tpu += key[i] * val[i];
     }
-
     return tpu;
 
     //console.log(tpu);
@@ -184,12 +176,20 @@ function calculateGPA(tpu, tcu) {
 
 function getGPA() {
     let y; let x;
+    let courseGrade = document.querySelector('.course_grade');
+    let courseUnit = document.querySelector('.course_unit');
 
     x = calculateCourseUnit();
     y = calculateGrade();
     gpa = calculateGPA(y, x);
 
+    if ((courseGrade.value.length && courseUnit.value.length) == 0) {
+        message = 'Please Fill in the fields';
 
+        alert(message);
+        return true;
+
+    }
     if (isNaN(gpa)) {
         return result.textContent = '0.00';
     }
@@ -201,7 +201,8 @@ function getGPA() {
         return result.textContent = gpa.toFixed(2);
     }
 
-}
+} document.getElementById("creadit__year").innerHTML = new Date().getFullYear();
+
 
 
 
