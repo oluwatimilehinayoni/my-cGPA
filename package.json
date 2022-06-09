@@ -19,5 +19,14 @@
     "bootstrap": "^5.1.0",
     "bootstrap-icons": "^1.8.3",
     "sass": "^1.49.9"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/developertimi/my-cGPA.git"
+  },
+  "bugs": {
+    "url": "https://github.com/developertimi/my-cGPA/issues"
+  },
+  "homepage": "https://github.com/developertimi/my-cGPA#readme"
 }
