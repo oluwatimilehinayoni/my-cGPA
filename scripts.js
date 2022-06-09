@@ -147,32 +147,35 @@ function calculateGrade() {
 function multiplier() {
     let courseGrade = document.querySelectorAll('.course_grade');
     let courseUnit = document.querySelectorAll('.course_unit');
-    let key = []; let val = []; let multiplied; let unit_mult; let grade_mult;
+    let key = []; let val = []; let multiplied; let unit_mult;
+
 
     for (let i = 0; i < courseUnit.length; i++) {
         unit_mult = courseUnit[i].value;
         key.push(Number(unit_mult));
 
+        let grade_mult = 0;
+
         if (courseGrade[i].value === 'A') {
-            grade_mult = 5;
+            Number(grade_mult = 5);
         }
         if (courseGrade[i].value === 'B') {
-            grade_mult = 4;
+            Number(grade_mult = 4);
         }
         if (courseGrade[i].value === 'C') {
-            grade_mult = 3;
+            Number(grade_mult = 3);
         }
         if (courseGrade[i].value === 'D') {
-            grade_mult = 2;
+            Number(grade_mult = 2);
         }
         if (courseGrade[i].value === 'E') {
-            grade_mult = 1;
+            Number(grade_mult = 1);
         }
         if (courseGrade[i].value === 'F') {
-            grade_mult = 0;
+            Number(grade_mult = 0);
         }
 
-        val.push(Number(grade_mult));
+        val.push(grade_mult);
         //    multiplied += key[i] * val[i];
     }
 
