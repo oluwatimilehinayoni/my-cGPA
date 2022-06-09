@@ -8,6 +8,16 @@ $font-color: rgb(61, 59, 59);
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+
+  @include media-breakpoint-down(sm){
+    box-sizing: border-box;
+    margin: 0;
+
+
+    body{
+      margin: 0 auto;
+    }
+  }
 }
 
 body {
@@ -28,4 +38,8 @@ p {
 
 h1,h2,h3{
   color: $primary;
+}
+
+.ads{
+  border-radius: 1rem;
 }

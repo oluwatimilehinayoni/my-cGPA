@@ -6,7 +6,7 @@
 
 let addCourseFields = document.querySelector('.add_course_fields');
 let addSemesterFields = document.querySelector('.add_semester_fields');
-let result = document.querySelector('#gradeResult');
+let result = document.querySelector('#grade_result');
 
 addCourseFields.addEventListener('click', addCourse);
 addSemesterFields.addEventListener('click', addSemester);
@@ -53,14 +53,14 @@ function addSemester() {
     semesterRow += 1;
     courseRow = courseRow + 1;
     html =
-        '<div class="row my-4">\
+        '<div class="mode' + semesterRow + ' row my-4">\
             <div class="col-sm-9 display-6 me-5">\
                  Semester '+ semesterRow + '\
             </div>\
                 <div class="col-sm-1 ms-5">\
-                  x\
+                <button type="button" class="btn btn-danger" data-bs-dismiss="mode">x</button>\
                 </div>\
-        </div>\
+            </div>\
                     <div class="row">\
             <div class="col-sm-5 border">\
                 <input type="text" placeholder="Course Code" class="">\
@@ -104,8 +104,9 @@ function calculateCourseUnit() {
         tcu += Number(courseUnit[i].value);
 
     }
-    // TOTAL COURSE UNIT 
-    return Number(tcu);
+    // TOTAL COURSE UNIT
+
+    return tcu;
 }
 
 function calculateGrade() {
@@ -114,45 +115,115 @@ function calculateGrade() {
     let tpu = 0;
 
     for (let i = 0; i < courseGrade.length; i++) {
-        if (courseGrade[i].value == 'A') {
+        if (courseGrade[i].value === 'A') {
             Number(tpu += 5);
         }
-        if (courseGrade[i].value == 'B') {
+        if (courseGrade[i].value === 'B') {
             Number(tpu += 4);
         }
-        if (courseGrade[i].value == 'C') {
+        if (courseGrade[i].value === 'C') {
             Number(tpu += 3);
         }
-        if (courseGrade[i].value == 'D') {
+        if (courseGrade[i].value === 'D') {
             Number(tpu += 2);
         }
-        if (courseGrade[i].value == 'E') {
+        if (courseGrade[i].value === 'E') {
             Number(tpu += 1);
         }
-        if (courseGrade[i].value == 'F') {
+        if (courseGrade[i].value === 'F') {
+            Number(tpu += 0);
+        }
+        else {
             Number(tpu += 0);
         }
 
     }
     //   TOTAL POINT UNIT
+
     return tpu;
+}
+
+
+function multiplier() {
+    let courseGrade = document.querySelectorAll('.course_grade');
+    let courseUnit = document.querySelectorAll('.course_unit');
+    let key = []; let val = []; let multiplied; let unit_mult = 0; let grade_mult = 0;
+
+    for (let i = 0; i < courseGrade.length; i++) {
+        key[i] += Number(courseUnit[i].value);
+
+        if (courseGrade[i].value == 'A') {
+            grade_mult[i] = Number(5);
+        }
+        if (courseGrade[i].value == 'B') {
+            grade_mult[i] = Number(4);
+        }
+        if (courseGrade[i].value == 'C') {
+            grade_mult[i] = Number(3);
+        }
+        if (courseGrade[i].value == 'D') {
+            grade_mult[i] = Number(2);
+        }
+        if (courseGrade[i].value == 'E') {
+            grade_mult[i] = Number(1);
+        }
+        if (courseGrade[i].value == 'F') {
+            grade_mult[i] = Number(0);
+        }
+        else {
+            grade_mult[i] = 'error';
+        }
+
+        key = unit_mult;
+        val = grade_mult;
+        multiplied += key[i] * val[i];
+    }
+
+    console.log('\'Grade: \'  ' + val + '');
+    console.log('\'Unit: \' ' + key + '');
+    // return multiplied;
+
 }
 
 
 function calculateGPA(tpu, tcu) {
     let gpa;
 
-    gpa = tpu / tcu;
+    //start here
+    //end here
 
-    result.textContent = gpa;
-    // console.log(result.textContent);
+    gpa = multiplier() / tcu;
+    return gpa;
 }
 
-calculateGrade();
-calculateCourseUnit();
+let resultButton;
+resultButton = document.querySelector('#result_button');
+resultButton.addEventListener('click', getGPA);
 
-calculateGPA(calculateGrade(), calculateCourseUnit());
 
+function getGPA() {
+    let y; let x;
+
+    x = calculateCourseUnit();
+    y = calculateGrade();
+    gpa = calculateGPA(y, x);
+
+    if (isNaN(gpa)) {
+        return result.textContent = '0.00';
+    }
+    if (gpa == Infinity) {
+        return result.textContent = '0.00';
+    }
+
+    else {
+        return result.textContent = gpa.toFixed(2);
+    }
+
+}
+
+
+
+//TODO
 
 
 /**
@@ -171,13 +242,11 @@ calculateGPA(calculateGrade(), calculateCourseUnit());
 //     }
 
 //     getGPA() {
+//         let gpa = new GPA(calculateGrade(), calculateCourseUnit());
 //         this.tpu / this.tcu;
 //     }
 // }
 
 
-
-// let gpa = new GPA(calculateGrade(), calculateCourseUnit());
-// gpa.getGPA();
 
 

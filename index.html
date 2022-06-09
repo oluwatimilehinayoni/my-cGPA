@@ -23,7 +23,7 @@
     <header class="">
 
         <!-- ============  NAVBAR  ================ -->
-        <nav class="navbar navbar-expand-lg py-3 navbar-light menu shadow fixed-top">
+        <nav class="navbar navbar-expand-lg py-3 navbar-dark menu shadow fixed-top">
             <div class="container">
                 <a href="#">
                     <div class="navbar-brand logo">
@@ -69,17 +69,20 @@
                             today!
                         </h1>
 
-                        <p class="desc my-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex eius deleniti
+                        <p class="desc my-5 justify-content-*-end">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing
+                            elit. Ex eius deleniti
                             vero quis reiciendis laudantium praesentium dignissimos? Non quidem perferendis omnis ad
                             deserunt vel ab fugit nulla commodi, natus culpa veritatis saepe est officiis? Laboriosam
                             velit inventore tempora dolorum eius necessitatibus possimus neque quidem maiores, dolorem
-                            nam tenetur obcaecati ipsum?</p>
+                            nam tenetur obcaecati ipsum?
+                        </p>
 
                         <a href="#calculator">
                             <button class="btn btn-primary btn-lg">Calculate my GPA!</button>
                         </a>
                     </div>
-                    <img class="img-fluid w-50 d-none d-sm-block" src="assets/images/mycgpa_banner.jpg" alt="">
+                    <img class="img-fluid w-50 d-none d-sm-block" src="assets/images/mycgpa_banner.svg" alt="">
                 </div>
             </div>
         </section>
@@ -88,16 +91,16 @@
 
     <!--MAIN BODY STARTS-->
     <div class="container mt-3 mb-5">
-        <div class="row">
-            <div class="col-sm-8">
-                <div class="mb-5 border p-5" id="calculator">
-                    <form action="/index.html" method="post" class="form">
+        <section class="row mb-5">
+            <article class="col-sm-8">
+                <div class="mb-5 border p-5">
+                    <div class="mode form">
                         <div class="row mb-4">
                             <div class="col-sm-9 display-6 me-5">
                                 Semester 1
                             </div>
                             <div class="col-sm-1 ms-5">
-                                x
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="mode1">x</button>
                             </div>
                         </div>
 
@@ -221,28 +224,22 @@
                                     min="1" max="6" onchange="calculateCourseUnit(this.value)">
                             </div>
                         </div>
-
-                        <!--  ==========Another Course  =========== -->
-                        <div id="addCourseDiv"></div>
-                        <!--  ==========Another Course Ends  =========== -->
+                    </div>
 
 
-                    </form>
+                    <!--  ==========Another Course  =========== -->
+                    <div id="addCourseDiv" class="form"></div>
+                    <!--  ==========Another Course Ends  =========== -->
 
 
+                    <!--  ========== BUTTONS FOR SEMESTER AND COURSES STARTS  ==========-->
                     <div class="mt-4 mb-4">
-                        <!--- Semester 1 GPA:
-                        <span id="">
-                            <strong>0.00</strong>
-                        </span>
-                    -->
+                        <button id="result_button" class="btn btn-success">View Result</button>
 
                         <button class="ms-5 btn btn-outline-primary text-dark add_course_fields">
                             Add Course
                         </button>
                     </div>
-
-
 
                     <div class="row">
                         <div class="col me-5">
@@ -253,17 +250,20 @@
 
                         <div class="col ms-5">
                             <div id="cgpaResult">
-                                <p class="text-center" id="gradeResult">0.00</p>
-                                <span>Cummulative GPA</span>
+                                <p class="text-center" id="grade_result">0.00</p>
+                                <span class="text-center ms-2">&nbsp;Cummulative GPA</span>
                             </div>
                         </div>
 
                     </div>
+                    <!--  ========== BUTTONS FOR SEMESTER AND COURSES ENDS  ==========-->
+
+
                 </div>
-            </div>
+            </article>
 
             <!--  ===========  ADS SECTION STARTS  ===========  -->
-            <div class="col-sm-4 ads">
+            <article class="col-sm-4 ads">
                 <div id="banner-ad" style="width: 300px; height: 250px;">
                     <script>
                         googletag.cmd.push(function () {
@@ -272,147 +272,196 @@
                     </script>
                 </div>
 
-                <div class="bg-primary justify-content-*-end p-5 mb-3">
+                <div class="bg-primary justify-content-*-end text-white p-5 mb-3">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum id debitis est delectus incidunt
                     commodi molestiae ex blanditiis repellendus.
                 </div>
-            </div>
+            </article>
             <!--  ===========  ADS SECTION ENDS  ===========  -->
+        </section>
 
 
-            <div>
-                <div class="row">
-                    <div class="col-sm-7">
-                        <section id="HowToUse" class="mb-4 HowToUse">
-                            <h1> <span><i class="bi bi-card-heading"></i></span> How to Use</h1>
-                            <small>To use mycGPA calculator, follow the steps below:</small>
-                            <ul>
-                                <li>Fill in the fields with your course code, course unit and grade</li>
-                                <li>
-                                    Click the 'Add Course' button <button disabled="disabled"
-                                        class="btn btn-outline-primary text-dark">
-                                        Add Course</button> to add more courses
-                                </li>
-                                <li>Click the 'Add Semester' button to add new fields for other semesters</li>
-                                <li>After you fill the fields for the semesters, the cGPA is displayed automatically at
-                                    the
-                                    bottom right.
-                                </li>
-                                <li>You have successfully calculated your cGPA. </li>
-                                <strong>Keep Shining!</strong>
-                            </ul>
-                        </section>
-                    </div>
+        <section id="HowToUse" class="mb-5 HowToUse">
+            <article class="row">
+                <div class="col-sm-7">
+                    <h1> <span><i class="bi bi-card-heading"></i></span> How to Use</h1>
+                    <small>To use mycGPA calculator, follow the steps below:</small>
+                    <ul>
+                        <li>Fill in the fields with your course code, course unit and grade</li>
+                        <li>
+                            Click the 'Add Course' button <button disabled="disabled"
+                                class="btn btn-outline-primary text-dark">
+                                Add Course</button> to add more courses
+                        </li>
+                        <li>Click the 'Add Semester' button to add new fields for other semesters</li>
+                        <li>After you fill the fields for the semesters, the cGPA is displayed automatically at
+                            the
+                            bottom right.
+                        </li>
+                        <li>You have successfully calculated your cGPA. </li>
+                        <strong>Keep Shining!</strong>
+                    </ul>
+                </div>
+                <div class="col-sm-5">
+                    <img src="assets/images/mycgpa_hoto.svg" class="img-fluid w-100 justify-bottom d-sm-block"
+                        alt="HowToUse">
+                </div>
+            </article>
 
-                    <div class="col-sm-5" style>
-                        <img src="assets/images/mycgpa_howto.jpg" class="img-fluid w-100 justify-bottom d-sm-block"
-                            alt="HowToUse">
-                    </div>
+            <!--  ===========  ADS SECTION STARTS  ===========  -->
+            <article class="bg-primary justify-content-*-end text-white text-align p-5 mt-3 mb-4 ads">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum id debitis est delectus incidunt
+                commodi molestiae ex blanditiis repellendus, repellat, doloremque quia qui voluptatibus, odio
+                deleniti cumque.
+            </article>
+            <!--  ===========  ADS SECTION ENDS  ===========  -->
+        </section>
+
+
+        <section id="faq" class="my-5 py-5">
+            <article class="row">
+                <div class="col-sm-5">
+                    <img src="assets/images/mycgpa_faq.svg" class="img-fluid w-100 justify-bottom d-sm-block"
+                        alt="mycGPA How To USe">
                 </div>
 
+                <div class="col-sm-7 shadow" id="accordion">
+                    <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
+                        <h1>FAQ</h1>
+                    </div>
 
-
-                <!--  ===========  ADS SECTION STARTS  ===========  -->
-                <div class="bg-primary justify-content-*-end text-align p-5 mt-3 mb-4 ads">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum id debitis est delectus incidunt
-                    commodi molestiae ex blanditiis repellendus, repellat, doloremque quia qui voluptatibus, odio
-                    deleniti cumque.
-                </div>
-                <!--  ===========  ADS SECTION ENDS  ===========  -->
-
-
-                <section id="faq" class="my-4">
-                    <article class="my-3" id="accordion">
-                        <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
-                            <h1>FAQ</h1>
-                        </div>
-
-                        <div>
-                            <div class="bd-example">
-                                <div class="accordion" id="accordionExample">
-                                    <div class="accordion-item">
-                                        <h4 class="accordion-header" id="headingOne">
-                                            <button class="accordion-button text-primary" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                                                aria-expanded="true" aria-controls="collapseOne">
-                                                Accordion Item #1
-                                            </button>
-                                        </h4>
-                                        <div id="collapseOne" class="accordion-collapse collapse show"
-                                            aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                            <div class="accordion-body">
-                                                <strong>This is the first item's accordion body.</strong> It is hidden
-                                                by default, until the collapse plugin adds the appropriate classes that
-                                                we use to style each element. These classes control the overall
-                                                appearance, as well as the showing and hiding via CSS transitions. You
-                                                can modify any of this with custom CSS or overriding our default
-                                                variables. It's also worth noting that just about any HTML can go within
-                                                the <code>.accordion-body</code>, though the transition does limit
-                                                overflow.
-                                            </div>
+                    <div>
+                        <div class="bd-example">
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h4 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button text-primary" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+                                            aria-controls="collapseOne">
+                                            Accordion Item #1
+                                        </button>
+                                    </h4>
+                                    <div id="collapseOne" class="accordion-collapse collapse show"
+                                        aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <strong>This is the first item's accordion body.</strong> It is hidden
+                                            by default, until the collapse plugin adds the appropriate classes that
+                                            we use to style each element. These classes control the overall
+                                            appearance, as well as the showing and hiding via CSS transitions. You
+                                            can modify any of this with custom CSS or overriding our default
+                                            variables. It's also worth noting that just about any HTML can go within
+                                            the <code>.accordion-body</code>, though the transition does limit
+                                            overflow.
                                         </div>
                                     </div>
-                                    <div class="accordion-item">
-                                        <h4 class="accordion-header" id="headingTwo">
-                                            <button class="accordion-button collapsed text-primary" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                                                aria-expanded="false" aria-controls="collapseTwo">
-                                                Accordion Item #2
-                                            </button>
-                                        </h4>
-                                        <div id="collapseTwo" class="accordion-collapse collapse"
-                                            aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                            <div class="accordion-body">
-                                                <strong>This is the second item's accordion body.</strong> It is hidden
-                                                by default, until the collapse plugin adds the appropriate classes that
-                                                we use to style each element. These classes control the overall
-                                                appearance, as well as the showing and hiding via CSS transitions. You
-                                                can modify any of this with custom CSS or overriding our default
-                                                variables. It's also worth noting that just about any HTML can go within
-                                                the <code>.accordion-body</code>, though the transition does limit
-                                                overflow.
-                                            </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h4 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed text-primary" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                            aria-expanded="false" aria-controls="collapseTwo">
+                                            Accordion Item #2
+                                        </button>
+                                    </h4>
+                                    <div id="collapseTwo" class="accordion-collapse collapse"
+                                        aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <strong>This is the second item's accordion body.</strong> It is hidden
+                                            by default, until the collapse plugin adds the appropriate classes that
+                                            we use to style each element. These classes control the overall
+                                            appearance, as well as the showing and hiding via CSS transitions. You
+                                            can modify any of this with custom CSS or overriding our default
+                                            variables. It's also worth noting that just about any HTML can go within
+                                            the <code>.accordion-body</code>, though the transition does limit
+                                            overflow.
                                         </div>
                                     </div>
-                                    <div class="accordion-item">
-                                        <h4 class="accordion-header" id="headingThree">
-                                            <button class="accordion-button collapsed text-primary" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#collapseThree"
-                                                aria-expanded="false" aria-controls="collapseThree">
-                                                Accordion Item #3
-                                            </button>
-                                        </h4>
-                                        <div id="collapseThree" class="accordion-collapse collapse"
-                                            aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                            <div class="accordion-body">
-                                                <strong>This is the third item's accordion body.</strong> It is hidden
-                                                by default, until the collapse plugin adds the appropriate classes that
-                                                we use to style each element. These classes control the overall
-                                                appearance, as well as the showing and hiding via CSS transitions. You
-                                                can modify any of this with custom CSS or overriding our default
-                                                variables. It's also worth noting that just about any HTML can go within
-                                                the <code>.accordion-body</code>, though the transition does limit
-                                                overflow.
-                                            </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h4 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button collapsed text-primary" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                            aria-expanded="false" aria-controls="collapseThree">
+                                            Accordion Item #3
+                                        </button>
+                                    </h4>
+                                    <div id="collapseThree" class="accordion-collapse collapse"
+                                        aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <strong>This is the third item's accordion body.</strong> It is hidden
+                                            by default, until the collapse plugin adds the appropriate classes that
+                                            we use to style each element. These classes control the overall
+                                            appearance, as well as the showing and hiding via CSS transitions. You
+                                            can modify any of this with custom CSS or overriding our default
+                                            variables. It's also worth noting that just about any HTML can go within
+                                            the <code>.accordion-body</code>, though the transition does limit
+                                            overflow.
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </article>
-                </section>
-
-
-                <!--  ===========  ADS SECTION STARTS  ===========  -->
-                <div class="bg-primary justify-content-*-end p-5 mt-3 mb-3 ads">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum id debitis est delectus incidunt
-                    commodi molestiae ex blanditiis repellendus, repellat, doloremque quia qui voluptatibus, odio
-                    deleniti cumque consequuntur ab hic vero temporibus.
+                    </div>
                 </div>
-                <!--  ===========  ADS SECTION ENDS  ===========  -->
+            </article>
+        </section>
 
+        <section id="about" class="my-5">
+            <article class="row">
+                <div class="col-sm-7">
+                    <h1>About Us</h1>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores nihil ut vero eum quibusdam,
+                    fuga
+                    illo unde cum quisquam! Asperiores, quasi. Culpa ipsum voluptate facilis consequuntur iste maxime
+                    sed
+                    nihil repudiandae aspernatur doloribus? A tenetur modi ullam, ratione deleniti natus sunt? Minima,
+                    nesciunt. Doloribus quod tempora odio expedita, impedit, qui nam quae, veritatis praesentium at
+                    libero
+                    enim consectetur labore quos quo vel eveniet voluptates magnam id laudantium rem delectus eius!
+                </div>
+
+                <div class="col-sm-5">
+                    <img src="assets/images/mycgpa_about.svg" class="img-fluid w-100 justify-bottom d-sm-block"
+                        alt="mycGPA How To USe">
+                </div>
+            </article>
+        </section>
+
+
+
+        <!--  ===========  ADS SECTION STARTS  ===========  -->
+        <section>
+            <div class="row">
+                <div class="col-sm">
+                    <div class="bg-primary justify-content-*-end text-white p-5 mt-3 mb-3 ads">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum id debitis est delectus incidunt
+                        commodi molestiae
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="bg-primary justify-content-*-end text-white p-5 mt-3 mb-3 ads">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum id debitis est delectus incidunt
+                        commodi molestiae
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="bg-primary justify-content-*-end text-white p-5 mt-3 mb-3 ads">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum id debitis est delectus incidunt
+                        commodi molestiae
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="bg-primary justify-content-*-end text-white p-5 mt-3 mb-3 ads">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum id debitis est delectus incidunt
+                        commodi molestiae
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
+        <!--  ===========  ADS SECTION ENDS  ===========  -->
+
+    </div>
+
     </div>
     <!--MAIN BODY ENDS-->
 
