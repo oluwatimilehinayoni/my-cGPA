@@ -159,19 +159,19 @@ function multiplier() {
         if (courseGrade[i].value === 'A') {
             grade_mult = 5;
         }
-        if (courseGrade.value === 'B') {
+        if (courseGrade[i].value === 'B') {
             grade_mult = 4;
         }
-        if (courseGrade.value === 'C') {
+        if (courseGrade[i].value === 'C') {
             grade_mult = 3;
         }
-        if (courseGrade.value === 'D') {
+        if (courseGrade[i].value === 'D') {
             grade_mult = 2;
         }
-        if (courseGrade.value === 'E') {
+        if (courseGrade[i].value === 'E') {
             grade_mult = 1;
         }
-        if (courseGrade.value === 'F') {
+        if (courseGrade[i].value === 'F') {
             grade_mult = 0;
         }
         else {
