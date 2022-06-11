@@ -17,8 +17,8 @@ footer {
     }
   }
 
-  #credit__year {
-    border-right: 1px solid;
+  #credit__author {
+    border-left: 1px solid;
   }
 
   @include media-breakpoint-down(sm) {

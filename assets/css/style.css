@@ -11505,8 +11505,8 @@ footer a :hover {
   font-size: 14px !important;
   text-decoration: underline !important;
 }
-footer #credit__year {
-  border-right: 1px solid;
+footer #credit__author {
+  border-left: 1px solid;
 }
 @media (max-width: 575.98px) {
   footer #credit__author {
