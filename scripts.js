@@ -64,11 +64,11 @@ function addSemester() {
     semesterRow += 1;
     courseRow = courseRow + 1;
     html =
-        '<div class="mode' + semesterRow + ' row my-4">\
-            <div class="col-sm-9 display-6 me-5">\
+        '<div class="mode' + semesterRow + ' row my-4 semester">\
+            <div class="col-9 display-6">\
                  Semester '+ semesterRow + '\
             </div>\
-                <div class="col-sm-1 ms-5">\
+                <div class="col pt-1">\
                 <button type="button" class="btn btn-danger" data-bs-dismiss="mode">&times;</button>\
                 </div>\
             </div>\

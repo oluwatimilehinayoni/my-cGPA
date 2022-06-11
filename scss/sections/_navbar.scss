@@ -1,44 +1,55 @@
 @use '../custom' as *;
 @use '../components/mixins' as *;
 
-.menu{
-    @include gradient;
+.menu {
+  @include gradient;
 
-    .logo{
-      color: $white;
-      font-family: 'Georgia', 'Times New Roman', Times, serif;
-      font-size: 26px;
-      font-weight: 700;
+  .logo {
+    color: $white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 28px;
+    font-weight: 700;
 
-      :hover{
-        color: $white;
-      }
+    :hover {
+      color: whitesmoke;
     }
-    
-    li{
+  }
 
-      a{
-        font-size: medium;
-        color: $white !important;
-        font-weight: 400;
-        padding: 0 0.7rem;
-        margin-right: 1.8rem;
-      }
+  li {
 
-      :hover{
-        border-bottom: 2px solid $primary !important;
-      }
+    a {
+      font-size: 1rem;
+      color: $white  !important;
+      font-weight: 400;
+      padding: 0 0.7rem;
+      margin-right: 1.8rem;
     }
 
-    @include media-breakpoint-down(lg) {
-      a{
-        text-align: center;
-        margin-top: 1rem;
+    :hover {
+      border-bottom: 2px solid $primary  !important;
+    }
+  }
 
-        :hover{
-          border: none;
-          color: whitesmoke;
-        }
+  @include media-breakpoint-down(lg) {
+    position: absolute;
+
+    .logo {
+      padding: 0;
+      margin: 0;
+
+      img {
+        display: none;
       }
     }
+
+    a {
+      text-align: center;
+      margin-top: 1rem;
+
+      :hover {
+        border: none;
+        color: whitesmoke;
+      }
+    }
+  }
 }

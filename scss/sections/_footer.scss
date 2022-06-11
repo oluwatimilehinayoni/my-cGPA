@@ -1,19 +1,30 @@
 @use '../custom' as *;
 
 footer {
-  background-color: rgb(26,26,26);
-    text-align: center;
-    color: #797F7D;
-    font-size: 0.4rem;
-  
-    a {
-      text-decoration: none;
-      font-weight: 600;
-      color: $primary;
-  
-      :hover {
-        font-size: 14px !important;
-        text-decoration: underline !important;
-      }
+  background-color: rgb(26, 26, 26);
+  text-align: center;
+  color: #797F7D;
+  font-size: 0.4rem;
+
+  a {
+    text-decoration: none;
+    font-weight: 600;
+    color: $primary;
+
+    :hover {
+      font-size: 14px !important;
+      text-decoration: underline !important;
     }
   }
+
+  #credit__year {
+    border-right: 1px solid;
+  }
+
+  @include media-breakpoint-down(sm) {
+    #credit__author {
+      display: block;
+    }
+  }
+
+}

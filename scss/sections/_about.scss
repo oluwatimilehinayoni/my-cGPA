@@ -1,19 +1,19 @@
 @use '../custom' as *;
 
-.HowToUse {
+#about {
     line-height: 2;
 
-    .HowToUse__content {
-        border-right-style: ridge;
+    .about__content {
+        border-right-style: inset;
     }
-
 }
 
 @include media-breakpoint-down(sm) {
-    .HowToUse {
-        .HowToUse__content {
+    #about {
+
+        .about__content {
             border-right-style: none;
+            margin-bottom: 1.5rem;
         }
     }
-
 }

@@ -67,14 +67,14 @@
         <!-- BANNER SECTION -->
         <section class="mt-5 p-5 text-center text-sm-start banner">
             <div class="container">
-                <div class="d-sm-flex">
+                <div class="d-sm-flex mt-4">
                     <div class="align-items-center justify-content-between">
-                        <h1 class="headerText">
+                        <h1 class="headerText justify-content-*-end">
                             Calculate your <span class="text-warning">cGPA</span> and know your fate
                             today!
                         </h1>
 
-                        <p class="desc my-5 justify-content-*-end">
+                        <p class="desc my-4 justify-content-*-end">
                             Lorem ipsum, dolor sit amet consectetur adipisicing
                             elit. Ex eius deleniti
                             vero quis reiciendis laudantium praesentium dignissimos? Non quidem perferendis omnis ad
@@ -87,7 +87,7 @@
                             <button class="btn btn-primary btn-lg">Calculate my GPA!</button>
                         </a>
                     </div>
-                    <img class="img-fluid w-50 d-none d-sm-block" src="assets/images/mycgpa_banner.svg" alt="">
+                    <img class="img-fluid w-50 d-none d-lg-block" src="assets/images/mycgpa_banner.svg" alt="">
                 </div>
             </div>
         </section>
@@ -97,14 +97,14 @@
     <!--MAIN BODY STARTS-->
     <div class="container mt-3 mb-5">
         <section class="row mb-5">
-            <article class="col-sm-8" id="calculator">
-                <div class="mb-5 border p-5">
+            <article class="col-lg-8" id="calculator">
+                <div class="mb-5 border shadow p-5">
                     <div class="mode form">
-                        <div class="row mb-4">
-                            <div class="col-sm-9 display-6 me-5">
+                        <div class="row mb-4 semester">
+                            <div class="col-9 display-6">
                                 Semester 1
                             </div>
-                            <div class="col-sm-1 ms-5">
+                            <div class="col pt-1">
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="mode1">&times;</button>
                             </div>
                         </div>
@@ -244,13 +244,13 @@
 
                     <!--  ========== BUTTONS FOR SEMESTER AND COURSES STARTS  ==========-->
                     <div class="row mt-4 mb-4">
-                        <div class="col-md">
+                        <div class="col">
                             <button class="btn btn-outline-primary text-dark add_course_fields">
                                 Add Course
                             </button>
                         </div>
 
-                        <div class="col-md">
+                        <div class="col">
                             <button class="btn btn-danger" id="reset">
                                 Clear
                             </button>
@@ -264,7 +264,7 @@
                             </button>
                         </div>
 
-                        <div class="col-sm ps-5 ms-5">
+                        <div class="col-sm mt-3">
                             <div id="cgpaResult">
                                 <p class="text-center" id="grade_result">0.00</p>
                                 <span class="text-center ms-2">&nbsp;Cummulative GPA</span>
@@ -277,13 +277,13 @@
             </article>
 
             <!--  ===========  ADS SECTION STARTS  ===========  -->
-            <article class="col-sm-4 ads">
-                <div class="bg-primary justify-content-*-end text-white p-5 mb-3">
+            <article class="col-lg-4 ads">
+                <div class="bg-primary justify-content-*-end text-white p-5 mb-3 ads">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum id debitis est delectus incidunt
                     commodi molestiae ex blanditiis repellendus.
                 </div>
 
-                <div class="bg-primary justify-content-*-end text-white p-5 mb-3">
+                <div class="bg-primary justify-content-*-end text-white p-5 mb-3 ads">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum id debitis est delectus incidunt
                     commodi molestiae ex blanditiis repellendus.
                 </div>
@@ -294,8 +294,8 @@
 
         <section id="HowToUse" class="mb-5 HowToUse">
             <article class="row">
-                <div class="col-sm-7">
-                    <h1> <span><i class="bi bi-card-heading"></i></span> How to Use</h1>
+                <div class="col-sm-7 justify-content-*-end p-2 HowToUse__content">
+                    <h1 class="fw-bold display-6"> How to Use</h1>
                     <small>To use mycGPA calculator, follow the steps below:</small>
                     <ul>
                         <li>Fill in the fields with your course code, course unit and grade</li>
@@ -314,13 +314,13 @@
                     </ul>
                 </div>
                 <div class="col-sm-5">
-                    <img src="assets/images/mycgpa_hoto.svg" class="img-fluid w-100 justify-bottom d-sm-block"
+                    <img src="assets/images/mycgpa_hoto.svg" class="shadow img-fluid w-100 justify-bottom d-sm-block"
                         alt="HowToUse">
                 </div>
             </article>
 
             <!--  ===========  ADS SECTION STARTS  ===========  -->
-            <article class="bg-primary justify-content-*-end text-white text-align p-5 mt-3 mb-4 ads">
+            <article class="bg-primary justify-content-*-end text-white text-align p-5 mt-5 mb-4 ads">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum id debitis est delectus incidunt
                 commodi molestiae ex blanditiis repellendus, repellat, doloremque quia qui voluptatibus, odio
                 deleniti cumque.
@@ -338,7 +338,7 @@
 
                 <div class="col-sm-7 shadow" id="accordion">
                     <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
-                        <h1 class="display-5 my-3 bw">FAQ</h1>
+                        <h1 class="display-6 my-3 fw-bold">FAQ</h1>
                     </div>
 
                     <div>
@@ -401,8 +401,8 @@
 
         <section id="about" class="my-5">
             <article class="row">
-                <div class="col-sm-7">
-                    <h1>About Us</h1>
+                <div class="col-sm-7 justify-content-*-end p-3 about__content shadow">
+                    <h1 class="display-6 fw-bold">About Us</h1>
                     <p>
                         mycGPA was developed to solve the difficulty every college/university student face in having to
                         calculate their GPA/cGPA in every academic session.
@@ -464,10 +464,13 @@
 
         <div class="container">
             <p class="lead">
-                &copy; <span id="credit__year"></span> mycGPA | prowdly developed by
-                <a href="https://whatsapp.com/dl/" target="_blank" rel="noopener noreferrer">
-                    Prince Will
-                </a>
+                &copy; <span id="credit__year"></span> mycGPA
+                <span id="credit__author">
+                    Developed by
+                    <a href="https://whatsapp.com/dl/" target="_blank" rel="noopener noreferrer">
+                        Prince Will
+                    </a>
+                </span>
             </p>
 
             <a href="#" class="position-absolute bottom-0 end-0 p-5">
