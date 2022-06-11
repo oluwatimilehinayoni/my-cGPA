@@ -11297,21 +11297,14 @@ button {
   margin: 0;
   padding: 0;
 }
-@media (max-width: 575.98px) {
-  * {
-    box-sizing: border-box;
-    margin: 0;
-  }
-  * body {
-    margin: 0 auto;
-  }
-}
 
 html {
   scroll-behavior: smooth;
 }
 
 body {
+  margin: 0;
+  padding: 0;
   background-color: #ffffff;
   font-size: 20px;
   color: rgb(61, 59, 59);
@@ -11354,7 +11347,17 @@ h1, h2, h3 {
   margin-right: 1.8rem;
 }
 .menu li :hover {
-  border-bottom: 2px solid rgb(209, 79, 5);
+  border-bottom: 2px solid rgb(209, 79, 5) !important;
+}
+@media (max-width: 991.98px) {
+  .menu a {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  .menu a :hover {
+    border: none;
+    color: whitesmoke;
+  }
 }
 
 .banner {
@@ -11365,12 +11368,16 @@ h1, h2, h3 {
   font-weight: lighter;
   color: #fff;
 }
-
-.headerText {
+.banner .headerText {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 700;
   color: #fff;
   font-size: 3.5rem;
+}
+@media (max-width: 575.98px) {
+  .banner .desc {
+    justify-content: space-evenly;
+  }
 }
 
 #cgpaResult {

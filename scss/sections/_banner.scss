@@ -10,7 +10,7 @@
         font-weight: lighter ;
         color: $white;
     }
-}
+
 
 .headerText{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -18,3 +18,11 @@
     color: $white;
     font-size: 3.5rem;
     }
+
+    @include media-breakpoint-down(sm){
+        .desc{
+            justify-content: space-evenly;
+        }
+    }
+
+}

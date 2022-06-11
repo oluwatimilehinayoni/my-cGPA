@@ -15,8 +15,8 @@ semesterRow = 1;
 
 
 // *******  EVENTS LISTENERS  ********
-resultButton = document.querySelector('#result_button');
-resultButton.addEventListener('click', getGPA);
+document.getElementById('reset').addEventListener('click', reset);
+// document.getElementById('view_gpa').addEventListener('click', getGPA);
 addCourseFields.addEventListener('click', addCourse);
 addSemesterFields.addEventListener('click', addSemester);
 
@@ -116,7 +116,6 @@ function calculateCourseUnit() {
 
     }
     // TOTAL COURSE UNIT
-
     return tcu;
 }
 
@@ -183,13 +182,14 @@ function getGPA() {
     y = calculateGrade();
     gpa = calculateGPA(y, x);
 
-    if ((courseGrade.value.length && courseUnit.value.length) == 0) {
-        message = 'Please Fill in the fields';
+    // if ((courseGrade.value.length || courseUnit.value.length) == 0) {
+    //     message = 'Please Fill in the fields';
 
-        alert(message);
-        return true;
+    //     alert(message);
+    //     return true;
 
-    }
+    // }
+
     if (isNaN(gpa)) {
         return result.textContent = '0.00';
     }
@@ -201,8 +201,57 @@ function getGPA() {
         return result.textContent = gpa.toFixed(2);
     }
 
-} document.getElementById("creadit__year").innerHTML = new Date().getFullYear();
+}
 
+/**
+ * REALTIME FUNCTIONALITY
+ * 
+ * DISPLAYS RESULT AS COURSES ARE BEING FILLED
+ */
+document.getElementById('addCourseDiv').addEventListener('change', call__getGPA);
+courseGrade = document.querySelector('.course_grade');
+courseUnit = document.querySelector('.course_unit');
+courseUnit.addEventListener('change', call__getGPA);
+courseGrade.addEventListener('change', call__getGPA);
+
+function call__getGPA() {
+    for (let i = 0; i < (courseGrade.length || courseUnit.length); i++) {
+        courseGrade = document.querySelectorAll('.course_grade');
+        courseUnit = document.querySelectorAll('.course_unit');
+
+        let myGPA1 = courseUnit[i].addEventListener('change', getGPA);
+        let myGPA2 = courseGrade[i].addEventListener('change', getGPA);
+
+        myGPA1;
+        myGPA2;
+    }
+}
+
+/**
+ * EMPTY ALL FIELDS AND CGPA
+ * CHANGE gpa TO 0.00
+ */
+function reset() {
+    courseGrade = document.querySelectorAll('.course_grade');
+    courseUnit = document.querySelectorAll('.course_unit');
+
+    for (let i = 0; i < courseGrade.length; i++) {
+        const grades = courseGrade[i].value = '';
+        const units = courseUnit[i].value = '';
+        gpa = '0.00';
+        result.textContent = gpa;
+        units; grades;
+
+        const courseDiv = document.querySelector("#addCourseDiv");
+        courseRow = 5;
+        semesterRow = 1;
+        courseDiv.innerHTML = '';
+        // courseDiv.insertAdjacentHTML('beforeend', html);
+    }
+
+}
+
+document.getElementById("credit__year").innerHTML = new Date().getFullYear();
 
 
 

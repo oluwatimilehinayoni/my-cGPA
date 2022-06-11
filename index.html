@@ -8,19 +8,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--META TAGS ENDS-->
 
+    <title>myCGPA</title>
+
     <!--Stylesheet-->
     <link rel="stylesheet" href="assets/css/style.css" />
 
     <!--Scripts-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="node_modules\bootstrap\dist\js\bootstrap.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
     <script src="scripts.js" defer></script>
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
-    <title>myCGPA</title>
 
-    <!--icon-->
-    <link rel="icon" type="image/x-icon" href="/my-cGPA/assets/images/mycGPA_logo.png">
+
+    <!--Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/images/mycGPA_logo.png" />
 </head>
 
 <body>
@@ -30,7 +31,7 @@
         <!-- ============  NAVBAR  ================ -->
         <nav class="navbar navbar-expand-lg py-3 navbar-dark menu shadow fixed-top">
             <div class="container">
-                <a class="navbar-brand logo" href="#">
+                <a class="navbar-brand logo" href="http://127.0.0.1:5500/index.html">
                     <img src="assets/images/mycGPA_logo.png" alt="" width="30" height="24">
                     myCGPA
                 </a>
@@ -242,22 +243,28 @@
 
 
                     <!--  ========== BUTTONS FOR SEMESTER AND COURSES STARTS  ==========-->
-                    <div class="mt-4 mb-4">
-                        <button id="result_button" class="btn btn-success">View Result</button>
+                    <div class="row mt-4 mb-4">
+                        <div class="col-md">
+                            <button class="btn btn-outline-primary text-dark add_course_fields">
+                                Add Course
+                            </button>
+                        </div>
 
-                        <button class="ms-5 btn btn-outline-primary text-dark add_course_fields">
-                            Add Course
-                        </button>
+                        <div class="col-md">
+                            <button class="btn btn-danger" id="reset">
+                                Clear
+                            </button>
+                        </div>
                     </div>
 
                     <div class="row">
-                        <div class="col me-5">
+                        <div class="col-sm me-5">
                             <button class="btn btn-lg btn-primary add_semester_fields">
                                 Add Semester
                             </button>
                         </div>
 
-                        <div class="col ms-5">
+                        <div class="col-sm ps-5 ms-5">
                             <div id="cgpaResult">
                                 <p class="text-center" id="grade_result">0.00</p>
                                 <span class="text-center ms-2">&nbsp;Cummulative GPA</span>
@@ -266,19 +273,14 @@
 
                     </div>
                     <!--  ========== BUTTONS FOR SEMESTER AND COURSES ENDS  ==========-->
-
-
                 </div>
             </article>
 
             <!--  ===========  ADS SECTION STARTS  ===========  -->
             <article class="col-sm-4 ads">
-                <div id="banner-ad" style="width: 300px; height: 250px;">
-                    <script>
-                        googletag.cmd.push(function () {
-                            googletag.display('banner-ad');
-                        });
-                    </script>
+                <div class="bg-primary justify-content-*-end text-white p-5 mb-3">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum id debitis est delectus incidunt
+                    commodi molestiae ex blanditiis repellendus.
                 </div>
 
                 <div class="bg-primary justify-content-*-end text-white p-5 mb-3">
@@ -326,7 +328,7 @@
             <!--  ===========  ADS SECTION ENDS  ===========  -->
         </section>
 
-
+        <!--  ============  FAQ SECTION STARTS HERE  ============  -->
         <section id="faq" class="my-5 py-5">
             <article class="row">
                 <div class="col-sm-5">
@@ -336,75 +338,56 @@
 
                 <div class="col-sm-7 shadow" id="accordion">
                     <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
-                        <h1>FAQ</h1>
+                        <h1 class="display-5 my-3 bw">FAQ</h1>
                     </div>
 
                     <div>
                         <div class="bd-example">
-                            <div class="accordion" id="accordionExample">
+                            <div class="accordion" id="faq">
                                 <div class="accordion-item">
                                     <h4 class="accordion-header" id="headingOne">
-                                        <button class="accordion-button text-primary" type="button"
+                                        <button class="accordion-button text-primary fw-bold" type="button"
                                             data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
                                             aria-controls="collapseOne">
-                                            Accordion Item #1
+                                            What GPA scale does mycGPA use ?
                                         </button>
                                     </h4>
                                     <div id="collapseOne" class="accordion-collapse collapse show"
-                                        aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                        aria-labelledby="headingOne" data-bs-parent="#faq">
                                         <div class="accordion-body">
-                                            <strong>This is the first item's accordion body.</strong> It is hidden
-                                            by default, until the collapse plugin adds the appropriate classes that
-                                            we use to style each element. These classes control the overall
-                                            appearance, as well as the showing and hiding via CSS transitions. You
-                                            can modify any of this with custom CSS or overriding our default
-                                            variables. It's also worth noting that just about any HTML can go within
-                                            the <code>.accordion-body</code>, though the transition does limit
-                                            overflow.
+                                            mycGPA is currently running on the <strong>5.0 GPA</strong> scale.
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
                                     <h4 class="accordion-header" id="headingTwo">
-                                        <button class="accordion-button collapsed text-primary" type="button"
+                                        <button class="accordion-button collapsed text-primary fw-bold" type="button"
                                             data-bs-toggle="collapse" data-bs-target="#collapseTwo"
                                             aria-expanded="false" aria-controls="collapseTwo">
-                                            Accordion Item #2
+                                            Does mycGPA save my GPA ?
                                         </button>
                                     </h4>
                                     <div id="collapseTwo" class="accordion-collapse collapse"
-                                        aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                        aria-labelledby="headingTwo" data-bs-parent="#faq">
                                         <div class="accordion-body">
-                                            <strong>This is the second item's accordion body.</strong> It is hidden
-                                            by default, until the collapse plugin adds the appropriate classes that
-                                            we use to style each element. These classes control the overall
-                                            appearance, as well as the showing and hiding via CSS transitions. You
-                                            can modify any of this with custom CSS or overriding our default
-                                            variables. It's also worth noting that just about any HTML can go within
-                                            the <code>.accordion-body</code>, though the transition does limit
-                                            overflow.
+                                            <strong>No</strong>, mycGPA does not save any user information, including
+                                            your result.
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
                                     <h4 class="accordion-header" id="headingThree">
-                                        <button class="accordion-button collapsed text-primary" type="button"
+                                        <button class="accordion-button collapsed text-primary fw-bold" type="button"
                                             data-bs-toggle="collapse" data-bs-target="#collapseThree"
                                             aria-expanded="false" aria-controls="collapseThree">
-                                            Accordion Item #3
+                                            Does mycGPA have the 7.0 GPA scale or other scales ?
                                         </button>
                                     </h4>
                                     <div id="collapseThree" class="accordion-collapse collapse"
-                                        aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                        aria-labelledby="headingThree" data-bs-parent="#faq">
                                         <div class="accordion-body">
-                                            <strong>This is the third item's accordion body.</strong> It is hidden
-                                            by default, until the collapse plugin adds the appropriate classes that
-                                            we use to style each element. These classes control the overall
-                                            appearance, as well as the showing and hiding via CSS transitions. You
-                                            can modify any of this with custom CSS or overriding our default
-                                            variables. It's also worth noting that just about any HTML can go within
-                                            the <code>.accordion-body</code>, though the transition does limit
-                                            overflow.
+                                            As of now, <strong>mycGPA does not have any other GPA scale</strong>.
+                                            But, other scales will be implemented in future updates..
                                         </div>
                                     </div>
                                 </div>
@@ -414,19 +397,20 @@
                 </div>
             </article>
         </section>
+        <!--  ============  FAQ SECTION ENDS HERE  ============  -->
 
         <section id="about" class="my-5">
             <article class="row">
                 <div class="col-sm-7">
                     <h1>About Us</h1>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores nihil ut vero eum quibusdam,
-                    fuga
-                    illo unde cum quisquam! Asperiores, quasi. Culpa ipsum voluptate facilis consequuntur iste maxime
-                    sed
-                    nihil repudiandae aspernatur doloribus? A tenetur modi ullam, ratione deleniti natus sunt? Minima,
-                    nesciunt. Doloribus quod tempora odio expedita, impedit, qui nam quae, veritatis praesentium at
-                    libero
-                    enim consectetur labore quos quo vel eveniet voluptates magnam id laudantium rem delectus eius!
+                    <p>
+                        mycGPA was developed to solve the difficulty every college/university student face in having to
+                        calculate their GPA/cGPA in every academic session.
+                    </p>
+                    <p>
+                        With our fully automated program, you just have to input your course units and grades and leave
+                        the rest to us.
+                    </p>
                 </div>
 
                 <div class="col-sm-5">
@@ -480,7 +464,7 @@
 
         <div class="container">
             <p class="lead">
-                &copy; <span id="creadit__year"></span> mycGPA | prowdly developed by
+                &copy; <span id="credit__year"></span> mycGPA | prowdly developed by
                 <a href="https://whatsapp.com/dl/" target="_blank" rel="noopener noreferrer">
                     Prince Will
                 </a>

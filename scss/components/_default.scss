@@ -8,16 +8,6 @@ $font-color: rgb(61, 59, 59);
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-
-  @include media-breakpoint-down(sm){
-    box-sizing: border-box;
-    margin: 0;
-
-
-    body{
-      margin: 0 auto;
-    }
-  }
 }
 
 html {
@@ -25,6 +15,8 @@ html {
 }
 
 body {
+  margin: 0;
+  padding: 0;
   background-color: $bgColor;
   font-size: 20px;
   color: $font-color;

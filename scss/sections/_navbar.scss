@@ -26,7 +26,19 @@
       }
 
       :hover{
-        border-bottom: 2px solid $primary;
+        border-bottom: 2px solid $primary !important;
+      }
+    }
+
+    @include media-breakpoint-down(lg) {
+      a{
+        text-align: center;
+        margin-top: 1rem;
+
+        :hover{
+          border: none;
+          color: whitesmoke;
+        }
       }
     }
 }

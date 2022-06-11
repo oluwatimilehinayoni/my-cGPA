@@ -1,0 +1,17 @@
+#
+# MEDIA SCREEN WIDTH FOR RESPONSIVENESS
+#
+
+360px
+375px
+384px
+390px
+
+412px
+414px
+428px
+
+800px
+810px
+
+1300px
