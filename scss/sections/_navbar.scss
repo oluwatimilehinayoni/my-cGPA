@@ -34,6 +34,7 @@
     position: absolute;
 
     .logo {
+      font-size: 23px;
       padding: 0;
       margin: 0;
 
@@ -47,8 +48,14 @@
       margin-top: 1rem;
 
       :hover {
-        border: none;
         color: whitesmoke;
+      }
+    }
+
+    li {
+
+      :hover {
+        border-bottom: none;
       }
     }
   }

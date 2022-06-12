@@ -1,26 +1,52 @@
 @use '../custom' as *;
 
-button{
-    color: $white !important ;
+button {
+    color: $white  !important;
+}
 
-    .add_course_fields{
-        :hover{
-        color: $white;
+body {
+    .btn-outline-primary {
+
+        :hover {
+            color: white !important;
         }
+
+        color: black !important;
     }
 }
 
-.banner{
-    button{
-        color: $primary !important;
+
+
+.banner {
+    button {
+        color: $primary  !important;
         font-weight: 500;
         background-color: $white;
-        border: 1px solid $primary;
+        transition: 0.8s;
     }
 
-    button:hover{
-            color: $white !important;
-            background-color: $primary;
-            border: $white;  
+    button:hover {
+        color: $white  !important;
+        background-color: $primary;
+        border: $white;
     }
+}
+
+@include media-breakpoint-down(sm) {
+    body {
+        button {
+            font-size: 14px;
+            width: fit-content;
+            height: fit-content;
+        }
+
+        .banner {
+            .container {
+                margin: 0;
+                padding: 0;
+
+            }
+        }
+    }
+
 }

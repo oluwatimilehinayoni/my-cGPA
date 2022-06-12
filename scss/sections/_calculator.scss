@@ -19,6 +19,19 @@
   }
 }
 
+.bi-plus {
+  display: none;
+}
+
+.add-btn {
+  :hover {
+    color: $white;
+  }
+}
+
+.add-col {
+  margin-top: 2rem;
+}
 
 .form {
 
@@ -42,6 +55,8 @@
     padding: 3%;
     border: none;
   }
+
+
 }
 
 @include media-breakpoint-down(sm) {
@@ -52,7 +67,7 @@
     }
 
     .row {
-      margin-bottom: 2rem;
+      margin-top: 2rem;
     }
 
     div,
@@ -63,5 +78,25 @@
     #cgpaResult {
       display: block;
     }
+
+  }
+
+  .bi-plus {
+    display: grid;
+  }
+
+  .add-col {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    svg {
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  .add-btn {
+    display: none;
   }
 }

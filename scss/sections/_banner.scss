@@ -1,46 +1,55 @@
 @use '../custom' as *;
 @use '../components/default' as *;
 @use '../components/mixins' as *;
- 
-.banner{
+
+.banner {
     @include gradient;
     padding: 10rem 0 0 0;
 
-    .desc{
-        font-weight: lighter ;
+    .desc {
+        font-weight: lighter;
         color: $white;
     }
 
 
-.headerText{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 700;
-    color: $white;
-    font-size: 3.5rem;
+    .headerText {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 700;
+        color: $white;
+        font-size: 3.5rem;
     }
 
-    @include media-breakpoint-down(sm){
-        .desc{
+    @include media-breakpoint-down(sm) {
+        .desc {
             justify-content: space-evenly;
+            line-height: 1.5;
         }
     }
 
 }
 
-@include media-breakpoint-down(sm){
-    .banner{
-    
-        .desc{
-            font-weight: lighter ;
+@include media-breakpoint-down(sm) {
+
+    .banner {
+
+        .desc {
+            font-weight: lighter;
             color: $white;
+            font-size: 1.1rem;
+            line-height: 1.5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, 'sans-serif';
         }
 
-        .headerText{
+        .headerText {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             font-weight: 700;
             color: $white;
-            font-size: 2.5rem;
+            font-size: 2rem !important;
             margin-top: 1.2rem;
+
+            span {
+                font-size: 2rem !important;
             }
-}
+        }
+    }
 }

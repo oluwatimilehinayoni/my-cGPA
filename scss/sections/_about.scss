@@ -10,9 +10,12 @@
 
 @include media-breakpoint-down(sm) {
     #about {
+        padding: 1rem;
 
         .about__content {
             border-right-style: none;
+            line-height: 2;
+            gap: 1rem;
             margin-bottom: 1.5rem;
         }
     }

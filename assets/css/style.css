@@ -11278,15 +11278,19 @@ textarea.form-control-lg {
 button {
   color: #fff !important;
 }
-button .add_course_fields :hover {
-  color: #fff;
+
+body .btn-outline-primary {
+  color: black !important;
+}
+body .btn-outline-primary :hover {
+  color: white !important;
 }
 
 .banner button {
   color: rgb(209, 79, 5) !important;
   font-weight: 500;
   background-color: #fff;
-  border: 1px solid rgb(209, 79, 5);
+  transition: 0.8s;
 }
 .banner button:hover {
   color: #fff !important;
@@ -11294,6 +11298,21 @@ button .add_course_fields :hover {
   border: #fff;
 }
 
+@media (max-width: 575.98px) {
+  body button {
+    font-size: 14px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  body .banner .container {
+    margin: 0;
+    padding: 0;
+  }
+}
 /* DEFAULT STYLES */
 * {
   box-sizing: border-box;
@@ -11333,6 +11352,16 @@ h3 {
 }
 
 @media (max-width: 575.98px) {
+  body {
+    font-size: 1.1rem;
+  }
+  body .display-none {
+    display: none;
+  }
+  body .ads {
+    margin: 0;
+  }
+
   section .img-fluid {
     width: 100%;
     height: 200px;
@@ -11365,6 +11394,7 @@ h3 {
     position: absolute;
   }
   .menu .logo {
+    font-size: 23px;
     padding: 0;
     margin: 0;
   }
@@ -11376,8 +11406,10 @@ h3 {
     margin-top: 1rem;
   }
   .menu a :hover {
-    border: none;
     color: whitesmoke;
+  }
+  .menu li :hover {
+    border-bottom: none;
   }
 }
 
@@ -11398,6 +11430,7 @@ h3 {
 @media (max-width: 575.98px) {
   .banner .desc {
     justify-content: space-evenly;
+    line-height: 1.5;
   }
 }
 
@@ -11405,13 +11438,19 @@ h3 {
   .banner .desc {
     font-weight: lighter;
     color: #fff;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, "sans-serif";
   }
   .banner .headerText {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 700;
     color: #fff;
-    font-size: 2.5rem;
+    font-size: 2rem !important;
     margin-top: 1.2rem;
+  }
+  .banner .headerText span {
+    font-size: 2rem !important;
   }
 }
 #cgpaResult {
@@ -11429,6 +11468,18 @@ h3 {
 }
 #cgpaResult span {
   position: absolute;
+}
+
+.bi-plus {
+  display: none;
+}
+
+.add-btn :hover {
+  color: #fff;
+}
+
+.add-col {
+  margin-top: 2rem;
 }
 
 .form {
@@ -11455,7 +11506,7 @@ h3 {
     display: flex;
   }
   .form .row {
-    margin-bottom: 2rem;
+    margin-top: 2rem;
   }
   .form div,
 .form button {
@@ -11463,6 +11514,24 @@ h3 {
   }
   .form #cgpaResult {
     display: block;
+  }
+
+  .bi-plus {
+    display: grid;
+  }
+
+  .add-col {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .add-col svg {
+    padding: 0;
+    margin: 0;
+  }
+
+  .add-btn {
+    display: none;
   }
 }
 .HowToUse {
@@ -11473,6 +11542,9 @@ h3 {
 }
 
 @media (max-width: 575.98px) {
+  .HowToUse {
+    padding: 1rem;
+  }
   .HowToUse .HowToUse__content {
     border-right-style: none;
   }
@@ -11485,8 +11557,13 @@ h3 {
 }
 
 @media (max-width: 575.98px) {
+  #about {
+    padding: 1rem;
+  }
   #about .about__content {
     border-right-style: none;
+    line-height: 2;
+    gap: 1rem;
     margin-bottom: 1.5rem;
   }
 }

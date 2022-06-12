@@ -43,6 +43,19 @@ h3 {
 }
 
 @include media-breakpoint-down(sm) {
+  body {
+    font-size: 1.1rem;
+
+    .display-none {
+      display: none;
+    }
+
+    .ads {
+      margin: 0;
+    }
+  }
+
+
   section {
     .img-fluid {
       width: 100%;

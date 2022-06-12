@@ -11,6 +11,8 @@
 
 @include media-breakpoint-down(sm) {
     .HowToUse {
+        padding: 1rem;
+
         .HowToUse__content {
             border-right-style: none;
         }

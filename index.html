@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--META TAGS ENDS-->
 
-    <title>myCGPA</title>
+    <title>mycGPA</title>
 
     <!--Stylesheet-->
     <link rel="stylesheet" href="assets/css/style.css" />
@@ -31,7 +31,7 @@
             <div class="container">
                 <a class="navbar-brand logo" href="http://127.0.0.1:5500/index.html">
                     <img src="assets/images/mycGPA_logo.png" alt="" width="30" height="24">
-                    myCGPA
+                    mycGPA
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
@@ -66,7 +66,7 @@
         <section class="mt-5 p-5 text-start justify-content-*-end text-sm-start banner">
             <div class="container">
                 <div class="d-sm-flex mt-4">
-                    <div class="align-items-center justify-content-between">
+                    <div class="justify-content-between">
                         <h1 class="headerText justify-content-*-end">
                             Calculate your <span class="text-warning">cGPA</span> and know your fate
                             today!
@@ -82,7 +82,7 @@
                         </p>
 
                         <a href="#calculator">
-                            <button class="btn btn-primary btn-lg">Calculate my GPA!</button>
+                            <button class="btn btn-primary btn-lg">Calculate Now</button>
                         </a>
                     </div>
                     <img class="img-fluid w-50 d-none d-lg-block" src="assets/images/mycgpa_banner.svg" alt="">
@@ -99,12 +99,10 @@
                 <div class="mb-5 border shadow p-5">
                     <div class="mode form">
                         <div class="row mb-4 semester">
-                            <div class="col-9 display-6">
+                            <div class="col display-6">
                                 Semester 1
                             </div>
-                            <div class="col pt-1">
-                                <button type="button" class="btn btn-danger" data-bs-dismiss="mode1">&times;</button>
-                            </div>
+
                         </div>
 
                         <div class="alert alert-danger alert-dismissible error d-none">
@@ -161,7 +159,7 @@
                             </div>
                         </div>
                         <!--  ============ 3  ============  -->
-                        <div class="row">
+                        <div class="row display-none">
                             <div class="col-sm-5 border">
                                 <input type="text" placeholder="Course Code" class="">
                             </div>
@@ -185,7 +183,7 @@
                             </div>
                         </div>
                         <!--  ============ 4  ============  -->
-                        <div class="row">
+                        <div class="row display-none">
                             <div class="col-sm-5 border">
                                 <input type="text" placeholder="Course Code" class="">
                             </div>
@@ -209,7 +207,7 @@
                             </div>
                         </div>
                         <!--  ============ 5  ============  -->
-                        <div class="row">
+                        <div class="row display-none">
                             <div class="col-sm-5 border">
                                 <input type="text" placeholder="Course Code" class="">
                             </div>
@@ -241,31 +239,44 @@
 
 
                     <!--  ========== BUTTONS FOR SEMESTER AND COURSES STARTS  ==========-->
-                    <div class="row mt-4 mb-4">
-                        <div class="col">
-                            <button class="btn btn-outline-primary text-dark add_course_fields">
+                    <div class="row add-col mb-4 justify-content-between">
+                        <div class="col-4">
+                            <button class="btn btn-outline-primary add-btn add_course_fields display-none">
                                 Add Course
+                            </button>
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="add_course_fields text-primary bi bi-plus" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                            </svg>
+                        </div>
+
+                        <div class="col-4">
+                            <button class="btn btn-primary add_semester_fields me-5">
+                                Semester
                             </button>
                         </div>
 
-                        <div class="col">
-                            <button class="btn btn-danger" id="reset">
+                        <div class="col-4">
+                            <button class="btn btn-danger ms-5" id="reset">
                                 Clear
                             </button>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="col-sm me-5">
-                            <button class="btn btn-lg btn-primary add_semester_fields">
-                                Add Semester
-                            </button>
-                        </div>
-
-                        <div class="col-sm mt-3">
+                        <!-- <div class="col-sm mt-3">
                             <div id="cgpaResult">
                                 <p class="text-center" id="grade_result">0.00</p>
                                 <span class="text-center ms-2">&nbsp;Cummulative GPA</span>
+                            </div>
+                        </div> -->
+
+                        <div class="progress rounded-pill" style="height: 25px; padding:0;">
+                            <div class="progress-bar rounded-pill progress-bar-striped bg-primary fw-bold"
+                                role="progressbar" style="min-width: 20px;" id="grade_result">
+                                0.00
                             </div>
                         </div>
 
@@ -275,15 +286,17 @@
             </article>
 
             <!--  ===========  ADS SECTION STARTS  ===========  -->
-            <article class="col-lg-4 ads">
-                <div class="bg-primary justify-content-*-end text-white p-5 mb-3 ads">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum id debitis est delectus incidunt
-                    commodi molestiae ex blanditiis repellendus.
+            <article class=" col-lg-4 ads">
+                <div class="border justify-content-*-end p-5 mb-3 ads">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum id debitis est
+                    delectus incidunt
+                    commodi molestiae
                 </div>
 
-                <div class="bg-primary justify-content-*-end text-white p-5 mb-3 ads">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum id debitis est delectus incidunt
-                    commodi molestiae ex blanditiis repellendus.
+                <div class="border justify-content-*-end p-5 mb-3 ads display-none ">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum id debitis est
+                    delectus incidunt
+                    commodi molestiae
                 </div>
             </article>
             <!--  ===========  ADS SECTION ENDS  ===========  -->
@@ -301,16 +314,17 @@
                         </svg> How to Use</h1>
                     <small>To use mycGPA calculator, follow the steps below:</small>
                     <ul>
-                        <li>Fill in the fields with your course code, course unit and grade</li>
+                        <li>Fill in the fields with your course code, course unit and grade.</li>
                         <li>
                             Click the 'Add Course' button <button disabled="disabled"
                                 class="btn btn-outline-primary text-dark">
-                                Add Course</button> to add more courses
+                                Add Course</button> or <code class="display-6 pt-4 text-primary">+</code>
+                            button to add
+                            more courses.
                         </li>
-                        <li>Click the 'Add Semester' button to add new fields for other semesters</li>
+                        <li>Click the 'Add Semester' button to add new fields for other semesters.</li>
                         <li>After you fill the fields for the semesters, the cGPA is displayed automatically at
-                            the
-                            bottom right.
+                            the bottom right.
                         </li>
                         <li>You have successfully calculated your cGPA. </li>
                         <strong>Keep Shining!</strong>
@@ -323,10 +337,9 @@
             </article>
 
             <!--  ===========  ADS SECTION STARTS  ===========  -->
-            <article class="bg-primary justify-content-*-end text-white text-align p-5 mt-5 mb-4 ads">
+            <article class="border justify-content-*-end text-align p-5 mt-5 mb-4 ads">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum id debitis est delectus incidunt
-                commodi molestiae ex blanditiis repellendus, repellat, doloremque quia qui voluptatibus, odio
-                deleniti cumque.
+                commodi molestiae. Lorem ipsum dolor sit amet consectetur adipisicing. Lorem ipsum dolor sit amet.
             </article>
             <!--  ===========  ADS SECTION ENDS  ===========  -->
         </section>
@@ -418,11 +431,11 @@
                                 d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
                         </svg> About Us
                     </h1>
-                    <p class="px-3">
-                        mycGPA was developed to solve the difficulty every college/university student face in having to
-                        calculate their GPA/cGPA in every academic session.
+                    <p>
+                        mycGPA was developed to solve the difficulty every university or polytechnic student experience
+                        in having to calculate their GPA/cGPA in every academic session.
                     </p>
-                    <p class="px-3">
+                    <p>
                         With our fully automated program, you just have to input your course units and grades and leave
                         the rest to us.
                     </p>
@@ -441,25 +454,25 @@
         <section>
             <div class="row">
                 <div class="col-sm">
-                    <div class="bg-primary justify-content-*-end text-white p-5 mt-3 mb-3 ads">
+                    <div class="border justify-content-*-end p-5 mt-3 mb-3 ads">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum id debitis est delectus incidunt
                         commodi molestiae
                     </div>
                 </div>
                 <div class="col-sm">
-                    <div class="bg-primary justify-content-*-end text-white p-5 mt-3 mb-3 ads">
+                    <div class="border justify-content-*-end p-5 mt-3 mb-3 ads">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum id debitis est delectus incidunt
                         commodi molestiae
                     </div>
                 </div>
                 <div class="col-sm">
-                    <div class="bg-primary justify-content-*-end text-white p-5 mt-3 mb-3 ads">
+                    <div class="border justify-content-*-end p-5 mt-3 mb-3 ads">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum id debitis est delectus incidunt
                         commodi molestiae
                     </div>
                 </div>
                 <div class="col-sm">
-                    <div class="bg-primary justify-content-*-end text-white p-5 mt-3 mb-3 ads">
+                    <div class="border justify-content-*-end p-5 mt-3 mb-3 ads display-none">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum id debitis est delectus incidunt
                         commodi molestiae
                     </div>
@@ -489,38 +502,12 @@
             </p>
 
             <a href="#" class="position-absolute bottom-0 end-0 p-5">
-                <i class="bi bi-arrow-up-circle h1"></i>
+                <i class="bi bi-arrow-up-circle text-white"></i>
             </a>
         </div>
 
     </footer>
     <!--FOOTER SECTION ENDS-->
-
-    <!-- ============  MODAL  =========== 
-
-    <div class="modal fade" id="calculator">
-        <div class="modal-dialog">
-            <div class="modal-content">
-
-                Modal Header 
-                <div class="modal-header">
-                    <h4 class="modal-title">Modal Heading</h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-
-                 Modal body
-                <div class="modal-body">
-                    Modal body..
-                </div>
-
-                 Modal footer 
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                </div>
-
-            </div>
-        </div>
-    </div> -->
 
 </body>
 

@@ -6,9 +6,10 @@
 let message = '';
 let courseGrade = document.querySelectorAll('.course_grade');
 let courseUnit = document.querySelectorAll('.course_unit');
-let addCourseFields = document.querySelector('.add_course_fields');
+let addCourseFields = document.querySelectorAll('.add_course_fields');
 let addSemesterFields = document.querySelector('.add_semester_fields');
 let result = document.querySelector('#grade_result');
+let progressbar = document.querySelector(".progress-bar");
 let resultButton;
 let courseRow = 5
 semesterRow = 1;
@@ -17,7 +18,9 @@ semesterRow = 1;
 // *******  EVENTS LISTENERS  ********
 document.getElementById('reset').addEventListener('click', reset);
 // document.getElementById('view_gpa').addEventListener('click', getGPA);
-addCourseFields.addEventListener('click', addCourse);
+for (let i = 0; i < addCourseFields.length; i++) {
+    addCourseFields[i].addEventListener('click', addCourse);
+}
 addSemesterFields.addEventListener('click', addSemester);
 
 
@@ -69,7 +72,7 @@ function addSemester() {
                  Semester '+ semesterRow + '\
             </div>\
                 <div class="col pt-1">\
-                <button type="button" class="btn btn-danger" data-bs-dismiss="mode">&times;</button>\
+               <!-- <button type="button" class="btn btn-danger" data-bs-dismiss="mode">&times;</button> -->\
                 </div>\
             </div>\
                     <div class="row">\
@@ -198,7 +201,12 @@ function getGPA() {
     }
 
     else {
-        return result.textContent = gpa.toFixed(2);
+        let w = Number(gpa * 20);
+
+        progressbar.style.width = w + "%";
+        progressbar.title = gpa.toFixed(2);
+
+        result.textContent = gpa.toFixed(2);
     }
 
 }
