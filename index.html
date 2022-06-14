@@ -239,30 +239,32 @@
 
 
                     <!--  ========== BUTTONS FOR SEMESTER AND COURSES STARTS  ==========-->
-                    <div class="row add-col mb-4 justify-content-between">
+                    <div class="row add-col mb-4">
+
                         <div class="col-4">
                             <button class="btn btn-outline-primary add-btn add_course_fields display-none">
                                 Add Course
                             </button>
 
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" fill="currentColor"
                                 class="add_course_fields text-primary bi bi-plus" viewBox="0 0 16 16">
                                 <path
                                     d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
                             </svg>
                         </div>
 
-                        <div class="col-4">
-                            <button class="btn btn-primary add_semester_fields me-5">
+                        <div class="col-4 padding-0">
+                            <button class="btn btn-primary add_semester_fields">
                                 Semester
                             </button>
                         </div>
 
                         <div class="col-4">
-                            <button class="btn btn-danger ms-5" id="reset">
+                            <button class="btn btn-danger mx-4" id="reset">
                                 Clear
                             </button>
                         </div>
+
                     </div>
 
                     <div class="row">
@@ -274,7 +276,7 @@
                         </div> -->
 
                         <div class="progress rounded-pill" style="height: 25px; padding:0;">
-                            <div class="progress-bar rounded-pill progress-bar-striped bg-primary fw-bold"
+                            <div class="progress-bar rounded-pill progress-bar-striped progress-bar-animated bg-primary fw-bold"
                                 role="progressbar" style="min-width: 20px;" id="grade_result">
                                 0.00
                             </div>
@@ -305,7 +307,7 @@
 
         <section id="HowToUse" class="mb-5 HowToUse">
             <article class="row">
-                <div class="col-sm-7 justify-content-*-end p-2 HowToUse__content">
+                <div class="col-lg-7 justify-content-*-end p-2 HowToUse__content">
 
                     <h1 class=" display-6"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                             fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
@@ -330,7 +332,7 @@
                         <strong>Keep Shining!</strong>
                     </ul>
                 </div>
-                <div class="col-sm-5">
+                <div class="col-lg-5">
                     <img src="assets/images/mycgpa_hoto.svg" class="shadow img-fluid w-100 justify-bottom d-sm-block"
                         alt="HowToUse">
                 </div>
@@ -347,12 +349,12 @@
         <!--  ============  FAQ SECTION STARTS HERE  ============  -->
         <section id="faq" class="my-5 py-5">
             <article class="row">
-                <div class="col-sm-5">
+                <div class="col-lg-5">
                     <img src="assets/images/mycgpa_faq.svg" class="img-fluid w-100 justify-bottom d-sm-block"
                         alt="mycGPA How To USe">
                 </div>
 
-                <div class="col-sm-7 shadow" id="accordion">
+                <div class="col-lg-7 shadow" id="accordion">
                     <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
                         <h1 class="display-6 my-3 ">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
@@ -423,7 +425,7 @@
 
         <section id="about" class="my-5">
             <article class="row">
-                <div class="col-sm-7 justify-content-*-end p-3 about__content shadow">
+                <div class="col-lg-7 justify-content-*-end p-3 about__content shadow">
                     <h1 class="display-6">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                             class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
@@ -441,7 +443,7 @@
                     </p>
                 </div>
 
-                <div class="col-sm-5">
+                <div class="col-lg-5">
                     <img src="assets/images/mycgpa_about.svg" class="img-fluid w-100 justify-bottom d-sm-block"
                         alt="mycGPA How To USe">
                 </div>
@@ -466,7 +468,7 @@
                     </div>
                 </div>
                 <div class="col-sm">
-                    <div class="border justify-content-*-end p-5 mt-3 mb-3 ads">
+                    <div class="border justify-content-*-end p-5 mt-3 mb-3 ads display-none">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum id debitis est delectus incidunt
                         commodi molestiae
                     </div>
@@ -482,20 +484,19 @@
         <!--  ===========  ADS SECTION ENDS  ===========  -->
 
     </div>
-
-    </div>
     <!--MAIN BODY ENDS-->
 
 
     <!--FOOTER SECTION STARTS-->
-    <footer class=" p-5 position-relative bg-dark text-center">
+    <footer class="p-5 position-relative bg-dark text-center">
 
         <div class="container">
             <p class="lead">
-                &copy; <span id="credit__year"></span> mycGPA
+                &copy; <span id="credit__year"></span> <a href="" title="mycGPA">mycGPA</a>
                 <span id="credit__author">
                     &nbsp; Developed by
-                    <a href="https://whatsapp.com/dl/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://whatsapp.com/dl/" target="_blank" rel="noopener noreferrer"
+                        title="Oluwatimilehin Ayoni">
                         Prince Will
                     </a>
                 </span>

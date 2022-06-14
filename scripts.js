@@ -254,6 +254,9 @@ function reset() {
         courseRow = 5;
         semesterRow = 1;
         courseDiv.innerHTML = '';
+
+        progressbar.style.width = gpa;
+        progressbar.title = gpa;
         // courseDiv.insertAdjacentHTML('beforeend', html);
     }
 

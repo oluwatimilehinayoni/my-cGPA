@@ -11331,6 +11331,10 @@ body {
   font-size: 20px;
   color: rgb(61, 59, 59);
 }
+body .padding-0 {
+  margin: 0;
+  padding: 0;
+}
 
 a {
   text-decoration: none;
@@ -11362,6 +11366,12 @@ h3 {
     margin: 0;
   }
 
+  section .img-fluid {
+    width: 100%;
+    height: 200px;
+  }
+}
+@media (max-width: 991.98px) {
   section .img-fluid {
     width: 100%;
     height: 200px;
@@ -11585,8 +11595,22 @@ footer a :hover {
 footer #credit__author {
   border-left: 1px solid;
 }
+
 @media (max-width: 575.98px) {
-  footer #credit__author {
+  body footer {
+    text-align: none;
+    padding: 0;
+    font-size: 0.2rem;
+  }
+  body footer #credit__author {
     display: block;
+    border-left: none;
+  }
+  body footer .position-absolute {
+    display: none;
+  }
+  body footer .container {
+    padding: 0;
+    min-width: 250px;
   }
 }/*# sourceMappingURL=style.css.map */
