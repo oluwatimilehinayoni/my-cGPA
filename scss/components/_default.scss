@@ -18,7 +18,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: $bgColor;
-  font-size: 20px;
+  font-size: 18px;
   color: $font-color;
 
   .padding-0 {
@@ -49,7 +49,7 @@ h3 {
 
 @include media-breakpoint-down(sm) {
   body {
-    font-size: 1.1rem;
+    font-size: 16px;
 
     .display-none {
       display: none;
@@ -64,7 +64,7 @@ h3 {
   section {
     .img-fluid {
       width: 100%;
-      height: 200px;
+      height: 160px;
     }
   }
 
@@ -74,7 +74,7 @@ h3 {
   section {
     .img-fluid {
       width: 100%;
-      height: 200px;
+      height: 160px;
     }
   }
 }

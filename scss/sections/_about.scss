@@ -13,9 +13,10 @@
         padding: 1rem;
 
         .about__content {
+            box-sizing: border-box;
             border-right-style: none;
             line-height: 2;
-            gap: 1rem;
+            padding: 1rem;
             margin-bottom: 1.5rem;
         }
     }

@@ -3,21 +3,35 @@
 
 <head>
     <!-- META TAGS-->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="title" content="mycGPA- cGPA calculator">
-    <meta name="keywords" content="mycGPA, gpa calculator, cgpa calculator">
-    <meta name="description" content="Calculate your gpa with ease, while you save time doing so...">
-    <meta name="author" content="Oluwatimilehin-Ayoni">
-    <meta name="robots" content="index,follow">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="title" content="mycGPA- cGPA Calculator" />
+    <meta name="keywords" content="mycGPA, gpa calculator, cgpa calculator" />
+    <meta name="description" content="Calculate your gpa with ease, while you save time doing so..." />
+    <meta name="author" content="Oluwatimilehin-Ayoni" />
+    <meta name="robots" content="index,follow" />
     <!--META TAGS ENDS-->
 
     <!--GOOGLE ANALYTICS-->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NDFJXEPN08"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
 
+        gtag("config", "G-NDFJXEPN08");
+    </script>
+    <!--GOOGLE ANALYTICS ENDS-->
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2481707368984811"
-     crossorigin="anonymous"></script>
+    <!--GOOGLE ADS-->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2481707368984811"
+        crossorigin="anonymous">
+    </script>
+    <!--GOOGLE ADS ENDS-->
 
     <title>mycGPA</title>
 
@@ -33,14 +47,13 @@
 </head>
 
 <body>
-
     <!-- HEADER SECTION STARTS -->
     <header class="">
         <!-- ============  NAVBAR  ================ -->
         <nav class="navbar navbar-expand-lg py-3 navbar-dark menu shadow fixed-top">
             <div class="container">
                 <a class="navbar-brand logo" href="http://127.0.0.1:5500/index.html">
-                    <img src="assets/images/mycGPA_logo.png" alt="" width="30" height="24">
+                    <img src="assets/images/mycGPA_logo.png" alt="" width="30" height="24" />
                     mycGPA
                 </a>
 
@@ -67,7 +80,6 @@
                         </li>
                     </ul>
                 </div>
-
             </div>
         </nav>
         <!-- ============  NAVBAR ENDS  ================ -->
@@ -78,20 +90,22 @@
                 <div class="d-sm-flex mt-4">
                     <div class="justify-content-between">
                         <h1 class="headerText justify-content-*-end">
-                            Having trouble calculating your <span class="text-warning">cGPA</span>?
+                            Having trouble calculating your
+                            <span class="text-warning">cGPA</span>?
                         </h1>
 
                         <p class="desc my-4 text-justify">
                             Worry no more.<br />
-                            Fill in your course unit and grade while you leave the rest to us. We return your GPA/cGPA
-                            in realtime.
-                        </p> <br />
+                            Fill in your course unit and grade while you leave the rest to
+                            us. We return your GPA/cGPA in realtime.
+                        </p>
+                        <br />
 
                         <a href="#calculator">
-                            <button class="btn btn-primary btn-lg">Get Started!</button>
+                            <button class="btn btn-primary">Get Started!</button>
                         </a>
                     </div>
-                    <img class="img-fluid w-50 d-none d-lg-block" src="assets/images/mycgpa_banner.svg" alt="">
+                    <img class="img-fluid w-50 d-none d-lg-block" src="assets/images/mycgpa_banner.svg" alt="" />
                 </div>
             </div>
         </section>
@@ -105,10 +119,7 @@
                 <div class="mb-5 border shadow p-5">
                     <div class="mode form">
                         <div class="row mb-4 semester">
-                            <div class="col display-6">
-                                Semester 1
-                            </div>
-
+                            <div class="col display-6">Semester 1</div>
                         </div>
 
                         <div class="alert alert-danger alert-dismissible error d-none">
@@ -119,7 +130,7 @@
                         <!--  ============ 1  ============  -->
                         <div class="row">
                             <div class="col-sm-5 border">
-                                <input type="text" placeholder="Course Code" class="">
+                                <input type="text" placeholder="Course Code" class="" />
                             </div>
 
                             <div class="col-sm-4 border">
@@ -137,13 +148,13 @@
 
                             <div class="col-sm-3 border">
                                 <input type="number" name="course_unit_1" placeholder="Course Unit" class="course_unit"
-                                    min="1" max="6" onchange="calculateCourseUnit(this.value)">
+                                    min="1" max="6" onchange="calculateCourseUnit(this.value)" />
                             </div>
                         </div>
                         <!--  ============ 2  ============  -->
                         <div class="row">
                             <div class="col-sm-5 border">
-                                <input type="text" placeholder="Course Code" class="">
+                                <input type="text" placeholder="Course Code" class="" />
                             </div>
 
                             <div class="col-sm-4 border">
@@ -161,13 +172,13 @@
 
                             <div class="col-sm-3 border">
                                 <input type="number" name="course_unit_2" placeholder="Course Unit" class="course_unit"
-                                    min="1" max="6" onchange="calculateCourseUnit(this.value)">
+                                    min="1" max="6" onchange="calculateCourseUnit(this.value)" />
                             </div>
                         </div>
                         <!--  ============ 3  ============  -->
                         <div class="row display-none">
                             <div class="col-sm-5 border">
-                                <input type="text" placeholder="Course Code" class="">
+                                <input type="text" placeholder="Course Code" class="" />
                             </div>
 
                             <div class="col-sm-4 border">
@@ -185,13 +196,13 @@
 
                             <div class="col-sm-3 border">
                                 <input type="number" name="course_unit_3" placeholder="Course Unit" class="course_unit"
-                                    min="1" max="6" onchange="calculateCourseUnit(this.value)">
+                                    min="1" max="6" onchange="calculateCourseUnit(this.value)" />
                             </div>
                         </div>
                         <!--  ============ 4  ============  -->
                         <div class="row display-none">
                             <div class="col-sm-5 border">
-                                <input type="text" placeholder="Course Code" class="">
+                                <input type="text" placeholder="Course Code" class="" />
                             </div>
 
                             <div class="col-sm-4 border">
@@ -209,13 +220,13 @@
 
                             <div class="col-sm-3 border">
                                 <input type="number" name="course_unit_4" placeholder="Course Unit" class="course_unit"
-                                    min="1" max="6" onchange="calculateCourseUnit(this.value)">
+                                    min="1" max="6" onchange="calculateCourseUnit(this.value)" />
                             </div>
                         </div>
                         <!--  ============ 5  ============  -->
                         <div class="row display-none">
                             <div class="col-sm-5 border">
-                                <input type="text" placeholder="Course Code" class="">
+                                <input type="text" placeholder="Course Code" class="" />
                             </div>
 
                             <div class="col-sm-4 border">
@@ -233,20 +244,17 @@
 
                             <div class="col-sm-3 border">
                                 <input type="number" name="course_unit_5" placeholder="Course Unit" class="course_unit"
-                                    min="1" max="6" onchange="calculateCourseUnit(this.value)">
+                                    min="1" max="6" onchange="calculateCourseUnit(this.value)" />
                             </div>
                         </div>
                     </div>
-
 
                     <!--  ==========Another Course  =========== -->
                     <div id="addCourseDiv" class="form"></div>
                     <!--  ==========Another Course Ends  =========== -->
 
-
                     <!--  ========== BUTTONS FOR SEMESTER AND COURSES STARTS  ==========-->
                     <div class="row add-col mb-4">
-
                         <div class="col-4">
                             <button class="btn btn-outline-primary add-btn add_course_fields display-none">
                                 Add Course
@@ -267,11 +275,8 @@
                         </div>
 
                         <div class="col-4">
-                            <button class="btn btn-danger mx-4" id="reset">
-                                Clear
-                            </button>
+                            <button class="btn btn-danger mx-4" id="reset">Clear</button>
                         </div>
-
                     </div>
 
                     <div class="row">
@@ -282,93 +287,98 @@
                             </div>
                         </div> -->
 
-                        <div class="progress rounded-pill" style="height: 25px; padding:0;">
+                        <div class="progress rounded-pill" style="height: 25px; padding: 0">
                             <div class="progress-bar rounded-pill progress-bar-striped progress-bar-animated bg-primary fw-bold"
-                                role="progressbar" style="min-width: 20px;" id="grade_result">
+                                role="progressbar" style="min-width: 20px" id="grade_result">
                                 0.00
                             </div>
                         </div>
-
                     </div>
                     <!--  ========== BUTTONS FOR SEMESTER AND COURSES ENDS  ==========-->
                 </div>
             </article>
 
             <!--  ===========  ADS SECTION STARTS  ===========  -->
-            <article class=" col-lg-4 ads">
-                <div class="border justify-content-*-end p-5 mb-3 ads display-none">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum id debitis est
-                    delectus incidunt
-                    commodi molestiae
+            <article class="col-lg-4 ads">
+                <div class="border justify-content-*-end mb-3 ads display-none">
+                    <img class="img-fluid" src="assets/images/mycgpa_ads.jpg" alt="sponsored">
                 </div>
 
-                <div class="border justify-content-*-end p-5 mb-3 ads display-none">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum id debitis est
-                    delectus incidunt
-                    commodi molestiae
+                <div class="border justify-content-*-end mb-3 ads display-none">
+                    <img class="img-fluid" src="assets/images/mycgpa_ads.jpg" alt="sponsored">
                 </div>
             </article>
             <!--  ===========  ADS SECTION ENDS  ===========  -->
         </section>
 
-
         <section id="HowToUse" class="mb-5 HowToUse">
             <article class="row">
                 <div class="col-lg-7 justify-content-*-end p-2 HowToUse__content">
-
-                    <h1 class=" display-6"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                            fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                    <h1 class="display-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
                             <path
                                 d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
-                        </svg> How to Use</h1>
+                        </svg>
+                        How to Use
+                    </h1>
                     <small>To use mycGPA calculator, follow the steps below:</small>
                     <ul>
-                        <li>Fill in the fields with your course code, course unit and grade.</li>
                         <li>
-                            Click the 'Add Course' button <button disabled="disabled"
-                                class="btn btn-outline-primary text-dark">
-                                Add Course</button> or <code class="display-6 pt-4 text-primary">+</code>
-                            button to add
-                            more courses.
+                            Fill in the fields with your course code, course unit and grade.
                         </li>
-                        <li>Click the 'Add Semester' button to add new fields for other semesters.</li>
-                        <li>After you fill the fields for the semesters, the cGPA is displayed automatically at
-                            the bottom right.
+                        <li>
+                            Click the 'Add Course' button
+                            <button disabled="disabled" class="btn btn-outline-primary text-dark">
+                                Add Course
+                            </button>
+                            or <code class="display-6 pt-4 text-primary">+</code>
+                            button to add more courses.
                         </li>
-                        <li>You have successfully calculated your cGPA. </li>
+                        <li>
+                            Click the 'Add Semester' button to add new fields for other
+                            semesters.
+                        </li>
+                        <li>
+                            After you fill the fields for the semesters, the cGPA is
+                            displayed automatically at the bottom right.
+                        </li>
+                        <li>You have successfully calculated your cGPA.</li>
                         <strong>Keep Shining!</strong>
                     </ul>
                 </div>
-                <div class="col-lg-5">
+                <div class="col-lg-5 display-none">
                     <img src="assets/images/mycgpa_hoto.svg" class="shadow img-fluid w-100 justify-bottom d-sm-block"
-                        alt="HowToUse">
+                        alt="HowToUse" />
                 </div>
             </article>
 
             <!--  ===========  ADS SECTION STARTS  ===========  -->
-            <article class="border justify-content-*-end text-align p-5 mt-5 mb-4 ads display-none">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum id debitis est delectus incidunt
-                commodi molestiae. Lorem ipsum dolor sit amet consectetur adipisicing. Lorem ipsum dolor sit amet.
+            <article class="border justify-content-*-end text-align p-5 mt-5 mb-4 ads d-none display-none">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum id
+                debitis est delectus incidunt commodi molestiae. Lorem ipsum dolor sit
+                amet consectetur adipisicing. Lorem ipsum dolor sit amet.
             </article>
             <!--  ===========  ADS SECTION ENDS  ===========  -->
         </section>
 
         <!--  ============  FAQ SECTION STARTS HERE  ============  -->
-        <section id="faq" class="my-5 py-5">
+        <section id="faq" class="my-5">
             <article class="row">
-                <div class="col-lg-5">
+                <div class="col-lg-5 display-none">
                     <img src="assets/images/mycgpa_faq.svg" class="img-fluid w-100 justify-bottom d-sm-block"
-                        alt="mycGPA How To USe">
+                        alt="mycGPA How To USe" />
                 </div>
 
                 <div class="col-lg-7 shadow" id="accordion">
                     <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
-                        <h1 class="display-6 my-3 ">
+                        <h1 class="display-6 my-3">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                                 class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
                                 <path
                                     d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
-                            </svg> FAQ
+                            </svg>
+                            FAQ
                         </h1>
                     </div>
 
@@ -386,7 +396,8 @@
                                     <div id="collapseOne" class="accordion-collapse collapse show"
                                         aria-labelledby="headingOne" data-bs-parent="#faq">
                                         <div class="accordion-body">
-                                            mycGPA is currently running on the <strong>5.0 GPA</strong> scale.
+                                            mycGPA is currently running on the
+                                            <strong>5.0 GPA</strong> scale.
                                         </div>
                                     </div>
                                 </div>
@@ -401,8 +412,8 @@
                                     <div id="collapseTwo" class="accordion-collapse collapse"
                                         aria-labelledby="headingTwo" data-bs-parent="#faq">
                                         <div class="accordion-body">
-                                            <strong>No</strong>, mycGPA does not save any user information, including
-                                            your result.
+                                            <strong>No</strong>, mycGPA does not save any user
+                                            information, including your result.
                                         </div>
                                     </div>
                                 </div>
@@ -417,8 +428,10 @@
                                     <div id="collapseThree" class="accordion-collapse collapse"
                                         aria-labelledby="headingThree" data-bs-parent="#faq">
                                         <div class="accordion-body">
-                                            As of now, <strong>mycGPA does not have any other GPA scale</strong>.
-                                            But, other scales will be implemented in future updates..
+                                            As of now,
+                                            <strong>mycGPA does not have any other GPA scale</strong>. But, other scales
+                                            will be implemented in future
+                                            updates..
                                         </div>
                                     </div>
                                 </div>
@@ -438,71 +451,69 @@
                             class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
                             <path
                                 d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
-                        </svg> About Us
+                        </svg>
+                        About Us
                     </h1>
                     <p>
-                        mycGPA was developed to solve the difficulty every university or polytechnic student experience
-                        in having to calculate their GPA/cGPA in every academic session.
+                        mycGPA was developed to solve the difficulty every university or
+                        polytechnic student experience in having to calculate their
+                        GPA/cGPA in every academic session.
                     </p>
                     <p>
-                        With our fully automated program, you just have to input your course units and grades and leave
-                        the rest to us.
+                        With our fully automated program, you just have to input your
+                        course units and grades and leave the rest to us.
                     </p>
                 </div>
 
-                <div class="col-lg-5">
-                    <img src="assets/images/mycgpa_about.svg" class="img-fluid w-100 justify-bottom d-sm-block"
-                        alt="mycGPA How To USe">
+                <div class="col-lg-5 display-none">
+                    <img src="assets/images/mycgpa_about.svg"
+                        class="img-fluid w-100 justify-bottom d-sm-block" alt="mycGPA How To Use" />
                 </div>
             </article>
         </section>
 
-
-
         <!--  ===========  ADS SECTION STARTS  ===========  -->
-        <section>
+        <section class="display-none">
             <div class="row">
                 <div class="col-sm">
-                    <div class="border justify-content-*-end p-5 mt-3 mb-3 ads display-none">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum id debitis est delectus incidunt
-                        commodi molestiae
+                    <div class="border justify-content-*-end p-5 mt-3 mb-3 ads d-none">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum id
+                        debitis est delectus incidunt commodi molestiae
                     </div>
                 </div>
                 <div class="col-sm">
-                    <div class="border justify-content-*-end p-5 mt-3 mb-3 ads display-none">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum id debitis est delectus incidunt
-                        commodi molestiae
+                    <div class="border justify-content-*-end p-5 mt-3 mb-3 ads d-none">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum id
+                        debitis est delectus incidunt commodi molestiae
                     </div>
                 </div>
                 <div class="col-sm">
-                    <div class="border justify-content-*-end p-5 mt-3 mb-3 ads display-none">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum id debitis est delectus incidunt
-                        commodi molestiae
+                    <div class="border justify-content-*-end p-5 mt-3 mb-3 ads d-none">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum id
+                        debitis est delectus incidunt commodi molestiae
                     </div>
                 </div>
                 <div class="col-sm">
-                    <div class="border justify-content-*-end p-5 mt-3 mb-3 ads display-none">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum id debitis est delectus incidunt
-                        commodi molestiae
+                    <div class="border justify-content-*-end p-5 mt-3 mb-3 ads d-none">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum id
+                        debitis est delectus incidunt commodi molestiae
                     </div>
                 </div>
             </div>
         </section>
         <!--  ===========  ADS SECTION ENDS  ===========  -->
-
     </div>
     <!--MAIN BODY ENDS-->
 
-
     <!--FOOTER SECTION STARTS-->
     <footer class="p-5 position-relative bg-dark text-center">
-
         <div class="container">
             <p class="lead">
-                &copy; <span id="credit__year"></span> <a href="" title="mycGPA">mycGPA</a>
-                <span id="credit__author">
+                &copy; <span id="credit__year"></span>
+                <a href="" title="mycGPA">mycGPA</a>
+                <span id="credit__author" class="display-none">
                     &nbsp; Developed by
-                    <a href="https://whatsapp.com/dl/" target="_blank" rel="noopener noreferrer"
+                    <a href="https://instagram.com/timilehin_ayoni" target="_blank" rel="noopener noreferrer"
                         title="Oluwatimilehin Ayoni">
                         Prince Will
                     </a>
@@ -513,10 +524,11 @@
                 <i class="bi bi-arrow-up-circle text-white"></i>
             </a>
         </div>
-
     </footer>
     <!--FOOTER SECTION ENDS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
