@@ -18,6 +18,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: $bgColor;
+  font-family: "lato", sans-serif;
   font-size: 18px;
   color: $font-color;
 
@@ -49,7 +50,7 @@ h3 {
 
 @include media-breakpoint-down(sm) {
   body {
-    font-size: 16px;
+    font-size: 14px;
 
     .display-none {
       display: none;

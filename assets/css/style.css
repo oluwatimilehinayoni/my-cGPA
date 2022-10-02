@@ -10146,7 +10146,8 @@ body {
   margin: 0;
   padding: 0;
   background-color: #ffffff;
-  font-size: 18px;
+  font-family: "lato", sans-serif;
+  font-size: 16px;
   color: rgb(61, 59, 59);
 }
 body .padding-0 {
@@ -10175,7 +10176,7 @@ h3 {
 
 @media (max-width: 575.98px) {
   body {
-    font-size: 16px;
+    font-size: 14px;
   }
   body .display-none {
     display: none;
