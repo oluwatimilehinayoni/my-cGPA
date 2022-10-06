@@ -19,6 +19,10 @@
   }
 }
 
+.sem-pad{
+  padding-top: 1.5rem;
+}
+
 .bi-plus {
   display: none;
 }
@@ -67,12 +71,12 @@
     }
 
     .row {
-      margin-top: 2rem;
+      margin-top: 1rem;
     }
 
     div,
     button {
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
     }
 
     #cgpaResult {

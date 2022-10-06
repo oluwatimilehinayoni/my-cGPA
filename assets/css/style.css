@@ -10147,12 +10147,16 @@ body {
   padding: 0;
   background-color: #ffffff;
   font-family: "lato", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   color: rgb(61, 59, 59);
 }
 body .padding-0 {
   margin: 0;
   padding: 0;
+}
+
+section {
+  margin-bottom: 1rem;
 }
 
 a {
@@ -10183,6 +10187,9 @@ h3 {
   }
   body .ads {
     margin: 0;
+  }
+  section {
+    margin-bottom: 0.6rem;
   }
   section .img-fluid {
     width: 100%;
@@ -10215,32 +10222,37 @@ h3 {
   margin-right: 1.8rem;
 }
 .menu li :hover {
-  border-bottom: 2px solid rgb(209, 79, 5) !important;
+  border-bottom: 1px solid rgb(209, 79, 5);
 }
 @media (max-width: 991.98px) {
   .menu {
     position: absolute;
   }
   .menu .logo {
-    font-size: 23px;
+    font-size: 20px;
     padding: 0;
     margin: 0;
   }
   .menu .logo img {
     display: none;
   }
-  .menu a {
+  .menu li a {
     text-align: center;
     margin-top: 1rem;
   }
-  .menu a :hover {
-    color: whitesmoke;
+  .menu li a :hover {
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .menu li a :hover {
+    border-bottom: none;
   }
   .menu li :hover {
     border-bottom: none;
   }
 }
-
 .banner {
   background: linear-gradient(to right, rgba(209, 79, 5, 0.95), rgba(191, 138, 210, 0.95));
   padding: 10rem 0 0 0;
@@ -10296,6 +10308,10 @@ h3 {
   position: absolute;
 }
 
+.sem-pad {
+  padding-top: 1.5rem;
+}
+
 .bi-plus {
   display: none;
 }
@@ -10332,11 +10348,11 @@ h3 {
     display: flex;
   }
   .form .row {
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
   .form div,
 .form button {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
   .form #cgpaResult {
     display: block;
@@ -10395,7 +10411,7 @@ footer {
   background-color: rgb(26, 26, 26);
   text-align: center;
   color: #797F7D;
-  font-size: 0.4rem;
+  font-size: 16px;
 }
 footer a {
   text-decoration: none;
@@ -10403,7 +10419,7 @@ footer a {
   color: rgb(209, 79, 5);
 }
 footer a :hover {
-  font-size: 14px !important;
+  font-size: 16px !important;
   text-decoration: underline !important;
 }
 
@@ -10411,7 +10427,7 @@ footer a :hover {
   body footer {
     text-align: none;
     padding: 0;
-    font-size: 10px;
+    font-size: 12px;
   }
   body footer #credit__author {
     display: block;
